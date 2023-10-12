@@ -1,14 +1,13 @@
-import Line from "./Line";
 import WeatherItem from "./WeatherItem";
+import SubTitle from "./SubTitle";
+import Line from "./Line";
 
 const Details = () => {
   return (
     <div className="w-full max-w-716 h-360 bg-gray-800 pt-6 pb-4 px-4 rounded-def max-lg:h-304 max-lg:max-w-none max-lg:py-3">
-      <h2 className="text-t-md text-gray-400 mb-2.5 max-lg:hidden">
-        Weather details
-      </h2>
+      <SubTitle title="Weather details" />
 
-      <div className="mt-4 max-lg:mt-0">
+      <div>
         <WeatherItem
           icon={
             <svg

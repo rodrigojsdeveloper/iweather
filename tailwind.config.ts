@@ -26,6 +26,7 @@ const config: Config = {
       },
       maxWidth: {
         50: "50px",
+        140: "140px",
         412: "421.24px",
         448: "448px",
         716: "716px",
