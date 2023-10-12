@@ -25,13 +25,17 @@ const config: Config = {
         transparent: "transparent",
       },
       maxWidth: {
+        50: "50px",
         412: "421.24px",
         448: "448px",
+        716: "716px",
+        1500: "1500px",
       },
       height: {
         54: "54px",
         56: "56px",
         304: "304px",
+        360: "360.2px",
         583: "583.2px",
       },
       borderRadius: {

@@ -33,6 +33,7 @@ const SelectCity = () => {
       <Input
         isLoading={isLoading}
         onChange={(e) => setSearch(e.target.value)}
+        maxWidth="max-w-448"
       />
 
       <div className="w-full max-w-448 shadow-def rounded-def mt-2">
