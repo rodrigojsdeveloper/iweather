@@ -1,13 +1,9 @@
-import "dotenv/config.js";
 import axios from "axios";
 
 const { API_KEY } = process.env;
 
 const api = axios.create({
-  baseURL: "https://api.openweathermap.org/data/3.0/",
-  headers: {
-    "Content-Type": "application/json",
-  },
+  baseURL: "https://api.openweathermap.org/data/2.5/",
   params: {
     lang: "en",
     units: "metric",

@@ -29,6 +29,7 @@ const config: Config = {
         448: "448px",
       },
       height: {
+        54: "54px",
         56: "56px",
       },
       borderRadius: {
@@ -109,6 +110,9 @@ const config: Config = {
           },
         ],
       },
+      boxShadow: {
+        "def": "0px 4px 30px 0px #00000040"
+      }
     },
   },
   plugins: [],

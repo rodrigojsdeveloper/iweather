@@ -1,5 +1,6 @@
 import { Nunito } from "next/font/google";
 import type { Metadata } from "next";
+import "dotenv/config.js";
 import "./globals.css";
 
 const nunito = Nunito({
