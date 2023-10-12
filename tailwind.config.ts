@@ -23,6 +23,9 @@ const config: Config = {
         white: "#FFFFFF",
         blueLight: "#8FB2F5",
       },
+      maxWidth: {
+        412: "421.24px"
+      }
     },
   },
   plugins: [],
