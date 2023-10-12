@@ -25,8 +25,10 @@ const config: Config = {
         transparent: "transparent",
       },
       maxWidth: {
+        50: "50px",
         412: "421.24px",
         448: "448px",
+        716: "716px",
       },
       height: {
         54: "54px",

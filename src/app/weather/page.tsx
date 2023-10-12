@@ -1,9 +1,9 @@
-import Today from "@/components/Today";
+import Search from "@/components/Search";
 
 export default function Weather() {
   return (
-    <main>
-      <Today />
+    <main className="p-5 max-md:p-2">
+      <Search />
     </main>
   );
 }

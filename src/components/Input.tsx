@@ -1,8 +1,12 @@
 import InputProps from "@/interfaces";
 
-const Input = ({ isLoading, onChange }: InputProps) => {
+const Input = ({ isLoading, onChange, maxWidth }: InputProps) => {
   return (
-    <div className="w-full max-w-448 h-56 flex flex-row items-center bg-gray-600 py-4 pl-5 pr-2.5 rounded-def">
+    <div
+      className={`w-full ${
+        maxWidth ? maxWidth : ""
+      } h-56 flex flex-row items-center bg-gray-600 py-4 pl-5 pr-2.5 rounded-def`}
+    >
       <input
         className="w-full mr-2 bg-transparent placeholder:text-gray-400 focus:placeholder:text-transparent"
         placeholder="Search location"

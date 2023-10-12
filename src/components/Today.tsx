@@ -1,6 +1,6 @@
 const Today = () => {
   return (
-    <div className="bg-night bg-cover bg-center bg-no-repeat w-full h-583 flex flex-col justify-between p-8 max-md:h-304 max-md:p-5">
+    <div className="bg-night bg-cover bg-center bg-no-repeat w-full h-583 flex flex-col justify-between rounded-def p-8 max-md:h-304 max-md:p-5">
       <div className="w-full flex flex-row justify-between max-sm:flex-col">
         <div className="flex flex-col text-gray-100">
           <h1 className="text-heading-lg max-md:text-heading-md">
