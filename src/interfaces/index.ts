@@ -9,3 +9,14 @@ export interface IWeatherItem {
   title: string;
   value: string;
 }
+
+export interface ISubTitle {
+  title: string;
+}
+
+export interface INextDay {
+  day: string;
+  src: string;
+  max_temp: string;
+  min_temp: string;
+}
