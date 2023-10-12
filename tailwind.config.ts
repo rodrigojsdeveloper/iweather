@@ -31,12 +31,15 @@ const config: Config = {
       height: {
         54: "54px",
         56: "56px",
+        304: "304px",
+        583: "583.2px",
       },
       borderRadius: {
         "def": "8px",
       },
       backgroundImage: {
         "background-weather": "url('./assets/background.png')",
+        "night": "url('./assets/night.png')",
       },
       fontSize: {
         "heading-hg": [
