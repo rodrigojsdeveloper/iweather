@@ -1,6 +1,16 @@
+"use client";
 import SelectCity from "@/components/SelectCity";
+import { useRouter } from "next/navigation";
+import { ICityProps } from "@/interfaces";
 
 export default function Home() {
+  const router = useRouter();
+
+  function handleSelected(city: ICityProps) {
+    localStorage.setItem("iWeather: city", JSON.stringify(city));
+    router.push("/weather");
+  }
+
   return (
     <div className="bg-background-weather bg-cover bg-center bg-no-repeat flex min-h-screen flex-col items-center p-12 max-sm:px-8">
       <header className="mb-48">
@@ -67,7 +77,7 @@ export default function Home() {
         </p>
       </main>
 
-      <SelectCity />
+      <SelectCity onSelect={handleSelected} />
     </div>
   );
 }

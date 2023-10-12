@@ -6,14 +6,7 @@ const getCityByName = async (name: string) => {
       `weather?q=${name}&appid=3d29a3d19ffccad965f9c63d15f593c1`
     );
 
-    const city = {
-      id: data.id,
-      name: data.sys.country ? `${data.name}, ${data.sys.country}` : data.name,
-      longitude: data.coord.lon,
-      latitude: data.coord.lat,
-    };
-
-    return [city];
+    return [data];
   } catch (error) {
     return [];
   }
