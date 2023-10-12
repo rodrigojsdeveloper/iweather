@@ -1,4 +1,4 @@
-import InputProps from "@/interfaces";
+import { InputProps } from "@/interfaces";
 
 const Input = ({ isLoading, onChange, maxWidth }: InputProps) => {
   return (

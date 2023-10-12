@@ -12,11 +12,11 @@ const Search = () => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
 
   return (
-    <div className="w-full max-w-716 bg-gray-800 p-4 rounded-def max-md:max-w-none max-md:p-3">
-      <div className="w-full flex flex-row justify-between items-center mb-3 max-md:mb-2">
+    <div className="w-full max-w-716 bg-gray-800 p-4 rounded-def max-lg:max-w-none max-lg:p-3">
+      <div className="w-full flex flex-row justify-between items-center gap-2.5 mb-2.5 max-lg:gap-2 max-lg:mb-2">
         <Link
           href="/"
-          className="w-full max-w-50 h-56 flex justify-center items-center bg-gray-600 p-2 mr-3 rounded-def max-md:mr-2"
+          className="w-full max-w-50 h-56 flex justify-center items-center bg-gray-600 p-2 rounded-def"
         >
           <svg
             width="32"
