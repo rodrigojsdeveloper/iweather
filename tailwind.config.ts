@@ -22,10 +22,18 @@ const config: Config = {
         },
         white: "#FFFFFF",
         blueLight: "#8FB2F5",
+        transparent: "transparent",
       },
       maxWidth: {
-        412: "421.24px"
-      }
+        412: "421.24px",
+        448: "448px",
+      },
+      height: {
+        56: "56px",
+      },
+      borderRadius: {
+        "def": "8px",
+      },
     },
   },
   plugins: [],
