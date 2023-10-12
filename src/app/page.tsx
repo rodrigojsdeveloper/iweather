@@ -2,7 +2,7 @@ import Input from "@/components/Input";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center p-12 max-sm:px-8">
+    <main className="bg-background-weather bg-cover bg-center bg-no-repeat flex min-h-screen flex-col items-center p-12 max-sm:px-8">
       <header className="mb-48">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -55,11 +55,14 @@ export default function Home() {
       </header>
 
       <div className="w-full max-w-412 flex flex-col items-center text-center mb-14 max-sm:mb-7">
-        <h1 className="flex flex-row items-center flex-wrap justify-center font-bold text-4xl mb-1.5 max-sm:text-3xl">
-          Welcome to <p className="text-blueLight ml-2">iWeather</p>
+        <h1 className="flex flex-row items-center flex-wrap justify-center font-bold text-heading-lg mb-1.5 max-md:text-heading-md max-sm:text-heading-sm">
+          Welcome to{" "}
+          <p className="text-blueLight ml-2 max-md:ml-1.5 max-sm:ml-1">
+            iWeather
+          </p>
         </h1>
 
-        <p className="font-normal text-lg text-gray-200 max-sm:text-sm">
+        <p className="font-normal text-t-lg text-gray-200 max-md:text-t-md max-sm:text-sm">
           Choose a location to see the weather forecast
         </p>
       </div>

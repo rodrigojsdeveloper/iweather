@@ -34,6 +34,81 @@ const config: Config = {
       borderRadius: {
         "def": "8px",
       },
+      backgroundImage: {
+        "background-weather": "url('./assets/background.png')",
+      },
+      fontSize: {
+        "heading-hg": [
+          "96px",
+          {
+            lineHeight: "100%",
+            fontWeight: "font-extrabold",
+          },
+        ],
+        "heading-xl": [
+          "48px",
+          {
+            lineHeight: "120%",
+            fontWeight: "font-extrabold",
+          },
+        ],
+        "heading-lg": [
+          "32px",
+          {
+            lineHeight: "140%",
+            fontWeight: "font-bold",
+          },
+        ],
+        "heading-md": [
+          "20px",
+          {
+            lineHeight: "140%",
+            fontWeight: "font-bold",
+          },
+        ],
+        "heading-sm": [
+          "16px",
+          {
+            lineHeight: "140%",
+            fontWeight: "font-bold",
+          },
+        ],
+        "heading-xs": [
+          "14px",
+          {
+            lineHeight: "140%",
+            fontWeight: "font-bold",
+          },
+        ],
+        "t-lg": [
+          "20px",
+          {
+            lineHeight: "140%",
+            fontWeight: "font-medium",
+          },
+        ],
+        "t-md": [
+          "16px",
+          {
+            lineHeight: "140%",
+            fontWeight: "font-medium",
+          },
+        ],
+        "t-sm": [
+          "14px",
+          {
+            lineHeight: "140%",
+            fontWeight: "font-medium",
+          },
+        ],
+        "t-xs": [
+          "12px",
+          {
+            lineHeight: "140%",
+            fontWeight: "font-medium",
+          },
+        ],
+      },
     },
   },
   plugins: [],
