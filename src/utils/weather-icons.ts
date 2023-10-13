@@ -19,8 +19,9 @@ import iconRainDay from "@/app/assets/weather-icons/rain-day.svg";
 import iconRainNight from "@/app/assets/weather-icons/rain-night.svg";
 import iconStormDay from "@/app/assets/weather-icons/storm-day.svg";
 import iconStormNight from "@/app/assets/weather-icons/storm-night.svg";
+import { IWeatherIcons } from "@/interfaces";
 
-const weathers = {
+const weathers: IWeatherIcons = {
   clouds: {
     name: "Clouds",
     bg_day: bgCloudyDay,

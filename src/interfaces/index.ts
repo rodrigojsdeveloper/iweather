@@ -19,6 +19,8 @@ export interface INextDay {
   src: string;
   max_temp: string;
   min_temp: string;
+  width: any;
+  height: any;
 }
 
 export interface ICityProps {
@@ -107,4 +109,17 @@ export interface IDetails {
 export interface ITodayProps {
   weather: IWeatherProps;
   details: IDetailsProps;
+}
+
+export interface IWeatherIcons {
+  [key: string]: any;
+}
+
+export interface INextDays {
+  nextDays: any[];
+}
+
+export interface IFetch {
+  today: ITodayProps;
+  nextDays: INextDay[];
 }

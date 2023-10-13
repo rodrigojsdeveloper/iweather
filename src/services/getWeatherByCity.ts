@@ -1,15 +1,14 @@
 import { IGetWeatherByCity, ITodayProps } from "@/interfaces";
 import weathers from "@/utils/weather-icons";
 import api from "./api";
+import getNextDays from "@/utils/getDays";
 
 const getWeatherByCity = async ({ lat, lon }: IGetWeatherByCity) => {
   const { data } = await api.get(
     `forecast?lat=${lat}&lon=${lon}&appid=3d29a3d19ffccad965f9c63d15f593c1`
   );
-
   const weatherData = data.list[0];
   const { main, weather, wind, pop } = weatherData;
-
   const weatherDescription = weather[0].description;
   const weatherMain = weather[0].main.toLowerCase();
 
@@ -30,7 +29,35 @@ const getWeatherByCity = async ({ lat, lon }: IGetWeatherByCity) => {
     },
   };
 
-  return today;
+  const days = getNextDays();
+  const daysAdded: string[] = [];
+  const nextDays: any[] = [];
+
+  data.list.forEach((item: any) => {
+    const day = new Date(item.dt_txt);
+    const formattedDate = `${day.getDate().toString().padStart(2, "0")}/${(
+      day.getMonth() + 1
+    )
+      .toString()
+      .padStart(2, "0")}`;
+    const status = item.weather[0].main;
+
+    const details = weathers[status.toLowerCase() ?? "clouds"];
+
+    if (days.includes(formattedDate) && !daysAdded.includes(formattedDate)) {
+      daysAdded.push(formattedDate);
+
+      nextDays.push({
+        day: new Date(item.dt_txt),
+        min: Math.floor(item.main.temp_min),
+        max: Math.ceil(item.main.temp_max),
+        weather: item.weather[0].description,
+        icon: details.icon_day,
+      });
+    }
+  });
+
+  return { today, nextDays };
 };
 
 export default getWeatherByCity;

@@ -6,11 +6,13 @@ import Image from "next/image";
 const Today = ({ city }: ICity) => {
   return (
     <div
-      className={`${
-        getCurrentTime().split(" ")[1] === "AM"
-          ? `bg-[${city?.weatherToday?.details?.bg_day.src}]`
-          : `bg-[${city?.weatherToday?.details?.bg_night.src}]`
-      } bg-cover bg-center bg-no-repeat w-full h-583 flex flex-col justify-between rounded-def p-8 max-lg:h-304 max-lg:p-5`}
+      style={{
+        backgroundImage:
+          getCurrentTime().split(" ")[1] === "AM"
+            ? `url('${city?.weatherToday?.details?.bg_day.src}')`
+            : `url('${city?.weatherToday?.details?.bg_night.src}')`,
+      }}
+      className="bg-cover bg-center bg-no-repeat w-full h-583 flex flex-col justify-between rounded-def p-8 max-lg:h-304 max-lg:p-5"
     >
       <div className="w-full flex flex-row justify-between max-sm:flex-col">
         <div className="flex flex-col text-gray-100">
@@ -20,9 +22,7 @@ const Today = ({ city }: ICity) => {
           <p className="text-t-sm max-lg:text-t-xs">{getCurrentDate()}</p>
         </div>
 
-        <p className="text-t-md max-lg:text-t-sm max-sm:mt-1">
-          {getCurrentTime()}
-        </p>
+        <p className="text-t-md mt-1 max-lg:text-t-sm">{getCurrentTime()}</p>
       </div>
 
       <div className="w-full flex flex-row justify-between items-end">
