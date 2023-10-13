@@ -1,8 +1,9 @@
 import WeatherItem from "./WeatherItem";
+import { IDetails } from "@/interfaces";
 import SubTitle from "./SubTitle";
 import Line from "./Line";
 
-const Details = () => {
+const Details = ({ details }: IDetails) => {
   return (
     <div className="w-full max-w-716 h-360 bg-gray-800 pt-6 pb-4 px-4 rounded-def max-lg:h-304 max-lg:max-w-none max-lg:py-3">
       <SubTitle title="Weather details" />
@@ -23,8 +24,8 @@ const Details = () => {
               />
             </svg>
           }
-          title="Sensação Térmica"
-          value="29.5ºC"
+          title="Thermal sensation"
+          value={`${details?.feels_like}ºC`}
         />
         <Line />
         <WeatherItem
@@ -42,8 +43,8 @@ const Details = () => {
               />
             </svg>
           }
-          title="Probabilidade de chuva"
-          value="0%"
+          title="Probability of rain"
+          value={`${details?.probability}%`}
         />
         <Line />
         <WeatherItem
@@ -61,8 +62,8 @@ const Details = () => {
               />
             </svg>
           }
-          title="Velocidade do vento"
-          value="8 km/h"
+          title="Wind speed"
+          value={`${details?.wind_speed} km/h`}
         />
         <Line />
         <WeatherItem
@@ -80,8 +81,8 @@ const Details = () => {
               />
             </svg>
           }
-          title="Umidade do ar"
-          value="40%"
+          title="Air humidity"
+          value={`${details?.humidity}%`}
         />
         <Line />
         <WeatherItem
@@ -99,8 +100,8 @@ const Details = () => {
               />
             </svg>
           }
-          title="Índice UV"
-          value="5"
+          title="UV Index"
+          value={details?.temp_kf.toString()}
         />
       </div>
     </div>

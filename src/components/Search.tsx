@@ -3,8 +3,9 @@ import { useState } from "react";
 import Link from "next/link";
 import Input from "./Input";
 import Today from "./Today";
+import { ICity } from "@/interfaces";
 
-const Search = () => {
+const Search = ({ city }: ICity) => {
   const [cities, setCities] = useState<Array<any>>([]);
 
   const [search, setSearch] = useState<string>("");
@@ -44,7 +45,7 @@ const Search = () => {
         />
       </div>
 
-      <Today />
+      <Today city={city} />
     </div>
   );
 };
