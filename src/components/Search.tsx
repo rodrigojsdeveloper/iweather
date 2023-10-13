@@ -14,7 +14,7 @@ const Search = ({ city }: ICity) => {
 
   return (
     <div className="w-full max-w-716 bg-gray-800 p-4 rounded-def max-lg:max-w-none max-lg:p-3">
-      <div className="w-full flex flex-row justify-between items-center gap-2.5 mb-2.5 max-lg:hidden">
+      <div className="w-full flex flex-row justify-between items-center gap-2 mb-2.5">
         <Link
           href="/"
           className="w-full max-w-50 h-56 flex justify-center items-center bg-gray-600 p-2 rounded-def"

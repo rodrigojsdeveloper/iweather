@@ -5,7 +5,7 @@ import Line from "./Line";
 
 const Details = ({ details }: IDetails) => {
   return (
-    <div className="w-full max-w-716 h-360 bg-gray-800 pt-6 pb-4 px-4 rounded-def max-lg:h-304 max-lg:max-w-none max-lg:py-3">
+    <div className="w-full h-360 bg-gray-800 pt-6 pb-4 px-4 rounded-def max-lg:h-304 max-lg:py-3">
       <SubTitle title="Weather details" />
 
       <div>
