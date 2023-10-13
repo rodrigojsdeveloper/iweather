@@ -64,6 +64,7 @@ export interface ICityProps {
   id: number;
   name: string;
   cod: number;
+  weatherToday?: any;
 }
 
 export interface ICity {

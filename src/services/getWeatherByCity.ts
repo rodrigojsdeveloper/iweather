@@ -19,7 +19,7 @@ const getWeatherByCity = async ({ lat, lon }: IGetWeatherByCity) => {
       temp_min: Math.floor(main.temp_min),
       temp_max: Math.ceil(main.temp_max),
       description: weatherDescription,
-      details: "weathers[weatherMain]",
+      details: weathers[weatherMain],
     },
     details: {
       feels_like: Math.floor(main.feels_like),
@@ -29,7 +29,7 @@ const getWeatherByCity = async ({ lat, lon }: IGetWeatherByCity) => {
       temp_kf: Math.floor(main.temp_kf),
     },
   };
-  console.log(today)
+
   return today;
 };
 
