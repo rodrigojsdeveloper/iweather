@@ -1,36 +1,78 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<div align="center">
+<h1>
+   iWeather
+</h1>
 
-## Getting Started
+<p>iWeather is a precise and intuitive weather forecast app to plan your day.</p>
+</div>
+<br/>
 
-First, run the development server:
+## Cloning the Repository
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+You can clone this repository using the following command:
+
+```
+https://github.com/rodrigojsdeveloper/iweather.git
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Package Manager
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+This project uses Yarn as a package manager. Make sure you have it installed before proceeding. If you don't already have it, you can download it <a href="https://classic.yarnpkg.com/lang/en/docs/install">here</a>.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+### Warning:
 
-## Learn More
+Although Yarn is the recommended package manager, you can also use NPM by running the following commands:
 
-To learn more about Next.js, take a look at the following resources:
+- To install dependencies: npm install
+- To start iWeather: npm run dev
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Installation of Dependencies
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+To install project dependencies, open the terminal at the root and run the following command:
 
-## Deploy on Vercel
+```
+yarn
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Starting iWeather
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+To start the project, run the following command in the terminal:
+
+```
+yarn dev
+```
+
+## Starting the Project in Docker
+
+At the root of the project, run the following commands:
+
+```
+# Build the Docker image for the current folder and with `dockerized-iweather`
+
+docker build . -t dockerized-iweather
+
+
+# Check if the image was created
+
+docker images | grep dockerized-iweather
+
+
+# Run the image in detached mode and map port 3000 inside the container with 3000 on the current host
+
+docker run -p 3000:3000 -d dockerized-iweather
+
+```
+
+The -d flag runs the project in the background, freeing up the terminal for other uses.
+
+### Accessing iWeather on Vercel
+
+You can access the iWeather application at the following link:
+
+```
+https://iweather-plus.vercel.app/
+```
+
+<br/>
+<p align="center">Developed by <a href="https://www.linkedin.com/in/rodrigo-de-jesus-silva/">Rodrigo Silva</a>
+</p>
