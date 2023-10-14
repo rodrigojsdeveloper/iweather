@@ -128,3 +128,10 @@ export interface IFetch {
   today: ITodayProps;
   nextDays: INextDay[];
 }
+
+export interface ICityComponent {
+  city: ICityProps;
+  index: number;
+  cities: ICityProps[];
+  onSelect: any;
+}

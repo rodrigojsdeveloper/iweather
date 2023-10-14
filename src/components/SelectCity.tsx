@@ -3,6 +3,7 @@ import getCityByName from "@/services/getCityByName";
 import { useState, useEffect } from "react";
 import { ISelectCity } from "@/interfaces";
 import Input from "./Input";
+import City from "./City";
 
 const SelectCity = ({ onSelect }: ISelectCity) => {
   const [cities, setCities] = useState<Array<any>>([]);
@@ -40,15 +41,13 @@ const SelectCity = ({ onSelect }: ISelectCity) => {
       <div className="w-full max-w-448 shadow-def rounded-def mt-2">
         {cities.length > 0 &&
           cities.map((city, index) => (
-            <div
-              key={city.id}
-              className={`w-full h-54 bg-gray-500 py-4 px-5 mb-px text-t-md ${
-                index === 0 ? "rounded-t-def" : ""
-              } ${index === cities.length - 1 ? "rounded-b-def" : ""}`}
-              onClick={() => onSelect(city)}
-            >
-              {city.name}
-            </div>
+            <City
+              key={index}
+              city={city}
+              index={index}
+              cities={cities}
+              onSelect={onSelect}
+            />
           ))}
       </div>
     </>

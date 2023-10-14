@@ -1,9 +1,10 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import Input from "./Input";
 import Today from "./Today";
 import { ICity } from "@/interfaces";
+import getCityByName from "@/services/getCityByName";
 
 const Search = ({ city, isLoading }: ICity) => {
   const [cities, setCities] = useState<Array<any>>([]);
@@ -11,6 +12,24 @@ const Search = ({ city, isLoading }: ICity) => {
   const [search, setSearch] = useState<string>("");
 
   const [isLoadingInput, setIsLoadingInput] = useState<boolean>(false);
+
+  const getCities = async (name: string) => {
+    setIsLoadingInput(true);
+
+    const res = await getCityByName(name);
+
+    setCities(res);
+    setIsLoadingInput(false);
+  };
+
+  useEffect(() => {
+    if (search.trim().length === 0) {
+      return;
+    }
+
+    const debounce = setTimeout(() => getCities(search), 500);
+    return () => clearInterval(debounce);
+  }, [search]);
 
   return (
     <div
