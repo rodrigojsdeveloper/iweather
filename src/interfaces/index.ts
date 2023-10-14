@@ -1,3 +1,5 @@
+import { Dispatch, SetStateAction } from "react";
+
 export interface InputProps {
   isLoading: boolean;
   onChange: React.ChangeEventHandler<HTMLInputElement>;
@@ -71,7 +73,7 @@ export interface ICityProps {
 
 export interface IsLoading {
   isLoading?: boolean;
-  setIsLoading?: any;
+  setIsLoading?: Dispatch<SetStateAction<boolean>>;
 }
 
 export interface ICity extends IsLoading {
@@ -135,3 +137,15 @@ export interface ICityComponent {
   cities: ICityProps[];
   onSelect: any;
 }
+
+export interface IChildren {
+  children: React.ReactNode;
+}
+
+export interface ICityContextData {
+  isLoadingInput: boolean;
+  setSearch: Dispatch<SetStateAction<string>>;
+  cities: ICityProps[];
+}
+
+export interface IWeatherContextData {}

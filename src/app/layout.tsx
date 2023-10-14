@@ -1,4 +1,5 @@
 import { Nunito } from "next/font/google";
+import { Providers } from "@/context";
 import type { Metadata } from "next";
 import "dotenv/config.js";
 import "./globals.css";
@@ -29,7 +30,9 @@ export default function RootLayout({
           rel="stylesheet"
         />
       </head>
-      <body className={nunito.className}>{children}</body>
+      <body className={nunito.className}>
+        <Providers>{children}</Providers>
+      </body>
     </html>
   );
 }
