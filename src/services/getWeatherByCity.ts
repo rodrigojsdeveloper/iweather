@@ -3,7 +3,12 @@ import weathers from "@/utils/weather-icons";
 import api from "./api";
 import getNextDays from "@/utils/getDays";
 
-const getWeatherByCity = async ({ lat, lon }: IGetWeatherByCity) => {
+const getWeatherByCity = async ({
+  lat,
+  lon,
+  setIsLoading,
+}: IGetWeatherByCity) => {
+  setIsLoading(true);
   const { data } = await api.get(
     `forecast?lat=${lat}&lon=${lon}&appid=3d29a3d19ffccad965f9c63d15f593c1`
   );
@@ -56,6 +61,8 @@ const getWeatherByCity = async ({ lat, lon }: IGetWeatherByCity) => {
       });
     }
   });
+
+  setIsLoading(false);
 
   return { today, nextDays };
 };

@@ -69,11 +69,16 @@ export interface ICityProps {
   weatherToday?: any;
 }
 
-export interface ICity {
+export interface IsLoading {
+  isLoading?: boolean;
+  setIsLoading?: any;
+}
+
+export interface ICity extends IsLoading {
   city: ICityProps;
 }
 
-export interface IGetWeatherByCity {
+export interface IGetWeatherByCity extends IsLoading {
   lat: number;
   lon: number;
 }
@@ -102,7 +107,7 @@ export interface IWeather {
   weather: IWeatherProps;
 }
 
-export interface IDetails {
+export interface IDetails extends IsLoading {
   details: IDetailsProps;
 }
 
@@ -115,7 +120,7 @@ export interface IWeatherIcons {
   [key: string]: any;
 }
 
-export interface INextDays {
+export interface INextDays extends IsLoading {
   nextDays: any[];
 }
 
