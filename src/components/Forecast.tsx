@@ -24,8 +24,8 @@ const Forecast = () => {
                 src={day.icon?.src}
                 max_temp={`${day?.max}ºC`}
                 min_temp={`${day?.min}ºC`}
-                width={150}
-                height={150}
+                width={120}
+                height={120}
               />
             ))}
           </div>

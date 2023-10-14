@@ -1,17 +1,21 @@
 "use client";
 import { IChildren, IWeatherContextData } from "../interfaces";
-import getWeatherByCity from "@/services/getWeatherByCity";
 import { createContext, useEffect, useState } from "react";
+import getWeatherByCity from "@/services/getWeatherByCity";
 
 const WeatherContext = createContext({} as IWeatherContextData);
 
 const WeatherContextProvider = ({ children }: IChildren) => {
+  const isBrowser = typeof window !== "undefined";
+
+  const cityFromLocalStorage = isBrowser
+    ? localStorage.getItem("iWeather: city")
+    : null;
+
   const [weather, setWeather] = useState<any>();
 
   const [city, setCity] = useState<any>(
-    typeof window !== "undefined"
-      ? JSON.parse(localStorage.getItem("iWeather: city") ?? "")
-      : ""
+    isBrowser && cityFromLocalStorage ? JSON.parse(cityFromLocalStorage) : null
   );
 
   const [nextDays, setNextDays] = useState<any[]>([]);
@@ -33,10 +37,9 @@ const WeatherContextProvider = ({ children }: IChildren) => {
   }
 
   useEffect(() => {
-    const { lat, lon } = city.coord;
-
-    fetchWeatherData(lat, lon);
-  }, []);
+    cityFromLocalStorage &&
+      fetchWeatherData(city?.coord?.lat, city?.coord?.lon);
+  }, [city?.coord?.lat, city?.coord?.lon, cityFromLocalStorage]);
 
   return (
     <WeatherContext.Provider
