@@ -5,29 +5,32 @@ import { useContext } from "react";
 import Input from "./Input";
 import City from "./City";
 
-const SelectCity = ({ onSelect }: ISelectCity) => {
-  const { isLoadingInput, setSearch, cities } = useContext(CityContext);
+const SelectCity = ({ onSelect, maxWidth }: ISelectCity) => {
+  const { isLoadingInput, setSearch, cities, search } = useContext(CityContext);
 
   return (
-    <>
+    <div className={`w-full ${maxWidth} relative`}>
       <Input
         isLoading={isLoadingInput}
         onChange={(e) => setSearch(e.target.value)}
-        maxWidth="max-w-448"
+        maxWidth={maxWidth}
       />
 
-      <div className="w-full max-w-448 shadow-def rounded-def mt-2">
-        {cities.map((city, index) => (
-          <City
-            key={index}
-            city={city}
-            index={index}
-            cities={cities}
-            onSelect={onSelect}
-          />
-        ))}
+      <div
+        className={`w-full ${maxWidth} absolute shadow-def rounded-def mt-2`}
+      >
+        {search !== "" &&
+          cities.map((city, index) => (
+            <City
+              key={index}
+              city={city}
+              index={index}
+              cities={cities}
+              onSelect={onSelect}
+            />
+          ))}
       </div>
-    </>
+    </div>
   );
 };
 

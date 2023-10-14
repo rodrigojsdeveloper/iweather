@@ -10,7 +10,7 @@ const Forecast = () => {
     <div
       className={`w-full h-220 bg-gray-800 p-4 rounded-def max-lg:p-3 ${
         isLoading ? "animate-pulse" : ""
-      } max-sm:h-180`}
+      } max-sm:h-166`}
     >
       {!isLoading ? (
         <>

@@ -22,32 +22,25 @@ const WeatherContextProvider = ({ children }: IChildren) => {
 
   const [isLoading, setIsLoading] = useState<boolean>(true);
 
-  async function fetchWeatherData(lat: number, lon: number) {
+  const fetchWeatherData = async (lat: number, lon: number) => {
     try {
       const weatherData = await getWeatherByCity({ lat, lon, setIsLoading });
       setWeather(weatherData.today);
-      localStorage.setItem(
-        "iWeather: cities",
-        JSON.stringify(weatherData.nextDays)
-      );
-      setNextDays(
-        isBrowser
-          ? JSON.parse(localStorage.getItem("iWeather: cities") ?? "")
-          : []
-      );
       setCity((prevCity: any) => ({
         ...prevCity,
         weatherToday: weatherData?.today?.weather,
       }));
+      setNextDays(weatherData.nextDays);
     } catch (error) {
       console.error(error);
     }
-  }
+  };
 
   useEffect(() => {
-    cityFromLocalStorage &&
+    if (cityFromLocalStorage) {
       fetchWeatherData(city?.coord?.lat, city?.coord?.lon);
-  }, [city?.coord?.lat, city?.coord?.lon, cityFromLocalStorage]);
+    }
+  }, [city?.coord, cityFromLocalStorage]);
 
   return (
     <WeatherContext.Provider

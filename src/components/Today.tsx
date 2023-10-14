@@ -8,7 +8,7 @@ const Today = ({ city }: ICity) => {
     <div
       style={{
         backgroundImage:
-          getCurrentTime().split(" ")[1] === "AM"
+          getCurrentTime().split(" ")[1] === "PM"
             ? `url('${city?.weatherToday?.details?.bg_day.src}')`
             : `url('${city?.weatherToday?.details?.bg_night.src}')`,
       }}
@@ -43,7 +43,7 @@ const Today = ({ city }: ICity) => {
           </div>
         </div>
 
-        {getCurrentTime().split(" ")[1] === "AM" ? (
+        {getCurrentTime().split(" ")[1] === "PM" ? (
           <Image
             src={city?.weatherToday?.details?.icon_day.src}
             alt="icon day"

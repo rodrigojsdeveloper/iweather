@@ -1,15 +1,10 @@
 "use client";
+import { CityContext } from "@/context/city.context";
 import SelectCity from "@/components/SelectCity";
-import { useRouter } from "next/navigation";
-import { ICityProps } from "@/interfaces";
+import { useContext } from "react";
 
 export default function Home() {
-  const router = useRouter();
-
-  function handleSelected(city: ICityProps) {
-    localStorage.setItem("iWeather: city", JSON.stringify(city));
-    router.push("/weather");
-  }
+  const { handleSelected } = useContext(CityContext);
 
   return (
     <div className="bg-background-weather bg-cover bg-center bg-no-repeat flex min-h-screen flex-col items-center p-12 max-sm:px-8">
@@ -75,7 +70,7 @@ export default function Home() {
         </p>
       </main>
 
-      <SelectCity onSelect={handleSelected} />
+      <SelectCity onSelect={handleSelected} maxWidth="max-w-448" />
     </div>
   );
 }

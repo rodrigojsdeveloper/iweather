@@ -1,20 +1,20 @@
 "use client";
 import { WeatherContext } from "@/context/weather.context";
 import { CityContext } from "@/context/city.context";
+import SelectCity from "./SelectCity";
 import { useContext } from "react";
 import Link from "next/link";
-import Input from "./Input";
 import Today from "./Today";
 
 const Search = () => {
-  const { isLoadingInput, setSearch } = useContext(CityContext);
+  const { handleSelected } = useContext(CityContext);
   const { isLoading, city } = useContext(WeatherContext);
 
   return (
     <div
       className={`w-full max-w-716 h-685 bg-gray-800 p-4 rounded-def max-lg:max-w-none max-lg:p-3 ${
         isLoading ? "animate-pulse" : ""
-      } max-lg:h-400`}
+      } max-lg:h-395`}
     >
       {!isLoading ? (
         <>
@@ -43,10 +43,7 @@ const Search = () => {
               </svg>
             </Link>
 
-            <Input
-              isLoading={isLoadingInput}
-              onChange={(e) => setSearch(e.target.value)}
-            />
+            <SelectCity onSelect={handleSelected} />
           </div>
 
           <Today city={city} />
