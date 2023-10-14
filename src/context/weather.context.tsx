@@ -22,7 +22,15 @@ const WeatherContextProvider = ({ children }: IChildren) => {
     try {
       const weatherData = await getWeatherByCity({ lat, lon, setIsLoading });
       setWeather(weatherData.today);
-      setNextDays(weatherData.nextDays);
+      localStorage.setItem(
+        "iWeather: cities",
+        JSON.stringify(weatherData.nextDays)
+      );
+      setNextDays(
+        typeof window !== "undefined"
+          ? JSON.parse(localStorage.getItem("iWeather: cities") ?? "")
+          : []
+      );
       setCity((prevCity: any) => ({
         ...prevCity,
         weatherToday: weatherData?.today?.weather,

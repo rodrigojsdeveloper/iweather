@@ -20,7 +20,7 @@ const Forecast = () => {
             {nextDays.map((day, key) => (
               <NextDay
                 key={key}
-                day={day.day.toLocaleDateString("en-US", { weekday: "short" })}
+                day={day.day}
                 src={day.icon?.src}
                 max_temp={`${day?.max}ºC`}
                 min_temp={`${day?.min}ºC`}

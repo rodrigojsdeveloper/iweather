@@ -2,9 +2,13 @@ import { INextDay } from "@/interfaces";
 import Image from "next/image";
 
 const NextDay = ({ day, src, max_temp, min_temp, width, height }: INextDay) => {
+  const currentDate = new Date(day);
+
   return (
     <div className="w-full flex flex-col items-center text-center">
-      <p className="text-t-sm text-gray-200 mb-1 max-lg:text-t-xs">{day}</p>
+      <p className="text-t-sm text-gray-200 mb-1 max-lg:text-t-xs">
+        {currentDate.toLocaleDateString("en-US", { weekday: "short" })}
+      </p>
 
       <Image
         src={src}
