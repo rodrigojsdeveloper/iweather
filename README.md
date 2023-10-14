@@ -60,7 +60,6 @@ docker images | grep dockerized-iweather
 # Run the image in detached mode and map port 3000 inside the container with 3000 on the current host
 
 docker run -p 3000:3000 -d dockerized-iweather
-
 ```
 
 The -d flag runs the project in the background, freeing up the terminal for other uses.
