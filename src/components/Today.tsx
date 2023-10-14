@@ -12,7 +12,7 @@ const Today = ({ city }: ICity) => {
             ? `url('${city?.weatherToday?.details?.bg_day.src}')`
             : `url('${city?.weatherToday?.details?.bg_night.src}')`,
       }}
-      className="bg-cover bg-center bg-no-repeat w-full h-583 flex flex-col justify-between rounded-def p-8 max-lg:h-304 max-lg:p-5"
+      className="bg-cover bg-center bg-no-repeat w-full h-513 flex flex-col justify-between rounded-def p-8 max-lg:h-304 max-lg:p-5"
     >
       <div className="w-full flex flex-row justify-between max-sm:flex-col">
         <div className="flex flex-col text-gray-100">

@@ -4,6 +4,7 @@ export interface InputProps {
   isLoading: boolean;
   onChange: React.ChangeEventHandler<HTMLInputElement>;
   maxWidth?: "max-w-448";
+  value?: string | number | readonly string[];
 }
 
 export interface IWeatherItem {
@@ -137,6 +138,7 @@ export interface ICityComponent {
   index: number;
   cities: ICityProps[];
   onSelect: any;
+  setSearch: Dispatch<SetStateAction<string>>;
 }
 
 export interface IChildren {

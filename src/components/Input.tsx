@@ -1,6 +1,6 @@
 import { InputProps } from "@/interfaces";
 
-const Input = ({ isLoading, onChange, maxWidth }: InputProps) => {
+const Input = ({ isLoading, onChange, maxWidth, value }: InputProps) => {
   return (
     <div
       className={`w-full ${
@@ -14,6 +14,7 @@ const Input = ({ isLoading, onChange, maxWidth }: InputProps) => {
         placeholder="Search location"
         onChange={onChange}
         disabled={isLoading}
+        value={value}
       />
 
       {isLoading ? (

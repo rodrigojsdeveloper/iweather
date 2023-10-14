@@ -30,7 +30,6 @@ const config: Config = {
         412: "421.24px",
         448: "448px",
         716: "716px",
-        1500: "1500px",
       },
       height: {
         54: "54px",
@@ -40,8 +39,8 @@ const config: Config = {
         304: "304px",
         360: "360.2px",
         395: "395px",
-        583: "583.2px",
-        685: "685px",
+        513: "513px",
+        613: "613px",
       },
       borderRadius: {
         "def": "8px",

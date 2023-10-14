@@ -14,7 +14,7 @@ const Forecast = () => {
     >
       {!isLoading ? (
         <>
-          <SubTitle title="Previsão para 5 dias" />
+          <SubTitle title="5 day forecast" />
 
           <div className="w-full flex flex-row items-center">
             <NextDay

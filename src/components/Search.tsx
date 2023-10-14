@@ -12,7 +12,7 @@ const Search = () => {
 
   return (
     <div
-      className={`w-full max-w-716 h-685 bg-gray-800 p-4 rounded-def max-lg:max-w-none max-lg:p-3 ${
+      className={`w-full max-w-716 h-613 bg-gray-800 p-4 rounded-def max-lg:max-w-none max-lg:p-3 ${
         isLoading ? "animate-pulse" : ""
       } max-lg:h-395`}
     >

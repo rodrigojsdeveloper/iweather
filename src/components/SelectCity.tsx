@@ -14,6 +14,7 @@ const SelectCity = ({ onSelect, maxWidth }: ISelectCity) => {
         isLoading={isLoadingInput}
         onChange={(e) => setSearch(e.target.value)}
         maxWidth={maxWidth}
+        value={search}
       />
 
       <div
@@ -27,6 +28,7 @@ const SelectCity = ({ onSelect, maxWidth }: ISelectCity) => {
               index={index}
               cities={cities}
               onSelect={onSelect}
+              setSearch={setSearch}
             />
           ))}
       </div>
