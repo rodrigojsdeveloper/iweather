@@ -1,7 +1,7 @@
 import { IGetWeatherByCity, ITodayProps } from "@/interfaces";
 import weathers from "@/utils/weather-icons";
-import api from "./api";
 import getNextDays from "@/utils/getDays";
+import api from "./api";
 
 const getWeatherByCity = async ({
   lat,
@@ -9,6 +9,7 @@ const getWeatherByCity = async ({
   setIsLoading,
 }: IGetWeatherByCity) => {
   setIsLoading(true);
+
   const { data } = await api.get(
     `forecast?lat=${lat}&lon=${lon}&appid=3d29a3d19ffccad965f9c63d15f593c1`
   );

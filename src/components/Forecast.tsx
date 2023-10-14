@@ -1,8 +1,11 @@
-import { INextDays } from "@/interfaces";
+import { WeatherContext } from "@/context/weather.context";
+import { useContext } from "react";
 import SubTitle from "./SubTitle";
 import NextDay from "./NextDay";
 
-const Forecast = ({ nextDays, isLoading }: INextDays) => {
+const Forecast = () => {
+  const { isLoading, nextDays } = useContext(WeatherContext);
+
   return (
     <div
       className={`w-full h-220 bg-gray-800 p-4 rounded-def max-lg:p-3 ${

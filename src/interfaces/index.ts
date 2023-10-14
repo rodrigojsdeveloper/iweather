@@ -73,7 +73,7 @@ export interface ICityProps {
 
 export interface IsLoading {
   isLoading?: boolean;
-  setIsLoading?: Dispatch<SetStateAction<boolean>>;
+  setIsLoading?: any;
 }
 
 export interface ICity extends IsLoading {
@@ -148,4 +148,9 @@ export interface ICityContextData {
   cities: ICityProps[];
 }
 
-export interface IWeatherContextData {}
+export interface IWeatherContextData {
+  isLoading: boolean;
+  nextDays: any[];
+  weather: IWeatherProps;
+  city: ICityProps;
+}

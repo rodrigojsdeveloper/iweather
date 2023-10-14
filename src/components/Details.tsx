@@ -1,9 +1,14 @@
+import { WeatherContext } from "@/context/weather.context";
 import WeatherItem from "./WeatherItem";
-import { IDetails } from "@/interfaces";
+import { useContext } from "react";
 import SubTitle from "./SubTitle";
 import Line from "./Line";
 
-const Details = ({ details, isLoading }: IDetails) => {
+const Details = () => {
+  const { isLoading, weather } = useContext(WeatherContext);
+
+  const details = weather ? weather.details : null;
+
   return (
     <div
       className={`w-full h-360 bg-gray-800 pt-6 pb-4 px-4 rounded-def max-lg:h-304 max-lg:py-3 ${

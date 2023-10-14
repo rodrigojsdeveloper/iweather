@@ -1,13 +1,14 @@
 "use client";
+import { WeatherContext } from "@/context/weather.context";
 import { CityContext } from "@/context/city.context";
-import { ICity } from "@/interfaces";
 import { useContext } from "react";
 import Link from "next/link";
 import Input from "./Input";
 import Today from "./Today";
 
-const Search = ({ city, isLoading }: ICity) => {
+const Search = () => {
   const { isLoadingInput, setSearch } = useContext(CityContext);
+  const { isLoading, city } = useContext(WeatherContext);
 
   return (
     <div
