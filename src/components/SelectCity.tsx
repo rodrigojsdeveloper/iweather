@@ -17,16 +17,15 @@ const SelectCity = ({ onSelect }: ISelectCity) => {
       />
 
       <div className="w-full max-w-448 shadow-def rounded-def mt-2">
-        {cities.length > 0 &&
-          cities.map((city, index) => (
-            <City
-              key={index}
-              city={city}
-              index={index}
-              cities={cities}
-              onSelect={onSelect}
-            />
-          ))}
+        {cities.map((city, index) => (
+          <City
+            key={index}
+            city={city}
+            index={index}
+            cities={cities}
+            onSelect={onSelect}
+          />
+        ))}
       </div>
     </>
   );

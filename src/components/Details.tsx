@@ -11,7 +11,7 @@ const Details = () => {
 
   return (
     <div
-      className={`w-full h-360 bg-gray-800 pt-6 pb-4 px-4 rounded-def max-lg:h-304 max-lg:py-3 ${
+      className={`w-full h-360 bg-gray-800 pt-6 pb-4 px-4 rounded-def max-sm:h-304 max-sm:py-3 ${
         isLoading ? "animate-pulse" : ""
       }`}
     >

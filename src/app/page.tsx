@@ -65,14 +65,12 @@ export default function Home() {
       </header>
 
       <main className="w-full max-w-412 flex flex-col items-center text-center mb-14 max-sm:mb-7">
-        <h1 className="flex flex-row items-center flex-wrap justify-center font-bold text-heading-lg mb-1.5 max-md:text-heading-md max-sm:text-heading-sm">
+        <h1 className="flex flex-row items-center flex-wrap justify-center font-bold text-heading-lg mb-1.5 max-sm:text-heading-md">
           Welcome to{" "}
-          <p className="text-blueLight ml-2 max-md:ml-1.5 max-sm:ml-1">
-            iWeather
-          </p>
+          <p className="text-blueLight ml-2 max-sm:ml-1.5">iWeather</p>
         </h1>
 
-        <p className="font-normal text-t-lg text-gray-200 max-md:text-t-md max-sm:text-sm">
+        <p className="font-normal text-t-lg text-gray-200 max-sm:text-t-md">
           Choose a location to see the weather forecast
         </p>
       </main>

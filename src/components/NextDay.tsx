@@ -6,7 +6,7 @@ const NextDay = ({ day, src, max_temp, min_temp, width, height }: INextDay) => {
 
   return (
     <div className="w-full flex flex-col items-center text-center">
-      <p className="text-t-sm text-gray-200 mb-1 max-lg:text-t-xs">
+      <p className="text-t-sm text-gray-200 mb-1 max-sm:text-t-xs">
         {currentDate.toLocaleDateString("en-US", { weekday: "short" })}
       </p>
 
@@ -19,8 +19,8 @@ const NextDay = ({ day, src, max_temp, min_temp, width, height }: INextDay) => {
       />
 
       <div className="flex flex-col items-center gap-2 max-lg:flex-col">
-        <p className="text-t-sm text-gray-100 max-lg:text-t-xs">{max_temp}</p>
-        <p className="text-t-sm text-gray-400 max-lg:text-t-xs">{min_temp}</p>
+        <p className="text-t-sm text-gray-100 max-sm:text-t-xs">{max_temp}</p>
+        <p className="text-t-sm text-gray-400 max-sm:text-t-xs">{min_temp}</p>
       </div>
     </div>
   );

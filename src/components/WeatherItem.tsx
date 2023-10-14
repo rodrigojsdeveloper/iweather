@@ -6,10 +6,10 @@ const WeatherItem = ({ icon, title, value }: IWeatherItem) => {
       <div className="flex flex-row items-center gap-2.5">
         {icon}
 
-        <p className="text-t-sm text-gray-200 max-md:text-t-xs">{title}</p>
+        <p className="text-t-sm text-gray-200 max-sm:text-t-xs">{title}</p>
       </div>
 
-      <p className="text-t-sm text-gray-100 max-md:text-t-xs">{value}</p>
+      <p className="text-t-sm text-gray-100 max-sm:text-t-xs">{value}</p>
     </div>
   );
 };
