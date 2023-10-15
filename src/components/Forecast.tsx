@@ -17,51 +17,19 @@ const Forecast = () => {
           <SubTitle title="5 day forecast" />
 
           <div className="w-full flex flex-row items-center">
-            <NextDay
-              key={0}
-              day={nextDays[0]?.day}
-              src={nextDays[0]?.icon?.src}
-              max_temp={`${nextDays[0]?.max}ºC`}
-              min_temp={`${nextDays[0]?.min}ºC`}
-              width={120}
-              height={120}
-            />
-            <NextDay
-              key={1}
-              day={nextDays[1]?.day}
-              src={nextDays[1]?.icon?.src}
-              max_temp={`${nextDays[1]?.max}ºC`}
-              min_temp={`${nextDays[1]?.min}ºC`}
-              width={120}
-              height={120}
-            />
-            <NextDay
-              key={2}
-              day={nextDays[2]?.day}
-              src={nextDays[2]?.icon?.src}
-              max_temp={`${nextDays[2]?.max}ºC`}
-              min_temp={`${nextDays[2]?.min}ºC`}
-              width={120}
-              height={120}
-            />
-            <NextDay
-              key={3}
-              day={nextDays[3]?.day}
-              src={nextDays[3]?.icon?.src}
-              max_temp={`${nextDays[3]?.max}ºC`}
-              min_temp={`${nextDays[3]?.min}ºC`}
-              width={120}
-              height={120}
-            />
-            <NextDay
-              key={4}
-              day={nextDays[4]?.day}
-              src={nextDays[4]?.icon?.src}
-              max_temp={`${nextDays[4]?.max}ºC`}
-              min_temp={`${nextDays[4]?.min}ºC`}
-              width={120}
-              height={120}
-            />
+            {nextDays.length > 0
+              ? nextDays.map((day, key) => (
+                  <NextDay
+                    key={key}
+                    day={day?.day}
+                    src={day?.icon?.src}
+                    max_temp={`${day?.max}ºC`}
+                    min_temp={`${day?.min}ºC`}
+                    width={120}
+                    height={120}
+                  />
+                ))
+              : null}
           </div>
         </>
       ) : null}
