@@ -3,7 +3,7 @@ import SelectCity from "@/components/SelectCity";
 
 export default function Home() {
   return (
-    <div className="bg-background-weather bg-cover bg-center bg-no-repeat flex min-h-screen flex-col items-center p-12 max-sm:px-8">
+    <div className="bg-background-weather bg-cover bg-center bg-no-repeat min-h-screen flex flex-col items-center p-12 max-sm:px-8">
       <header className="mb-48">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -61,7 +61,7 @@ export default function Home() {
           <p className="text-blueLight ml-2 max-sm:ml-1.5">iWeather</p>
         </h1>
 
-        <p className="font-normal text-t-lg text-gray-200 max-sm:text-t-md">
+        <p className="text-t-lg text-gray-200 max-sm:text-t-md">
           Choose a location to see the weather forecast
         </p>
       </main>

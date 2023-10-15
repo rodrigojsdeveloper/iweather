@@ -29,10 +29,10 @@ const Forecast = () => {
                     height={120}
                   />
                 ))
-              : (<div>TESTE: o array de previsões está vindo vazio</div>)}
+              : null}
           </div>
         </>
-      ) : (<div>TESTE: o component Previsão não está sendo carregado</div>)}
+      ) : null}
     </div>
   );
 };

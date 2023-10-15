@@ -31,6 +31,7 @@ const config: Config = {
         716: "716px",
       },
       height: {
+        49: "49px",
         54: "54px",
         56: "56px",
         166: "166px",
