@@ -123,15 +123,6 @@ export interface IWeatherIcons {
   [key: string]: any;
 }
 
-export interface INextDays extends IsLoading {
-  nextDays: any[];
-}
-
-export interface IFetch {
-  today: ITodayProps;
-  nextDays: INextDay[];
-}
-
 export interface ICityComponent {
   city: ICityProps;
   index: number;

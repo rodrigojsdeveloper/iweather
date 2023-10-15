@@ -1,5 +1,5 @@
 import { IGetWeatherByCity, ITodayProps } from "@/interfaces";
-import weathers from "@/utils/weather-icons";
+import weathers from "@/utils/weatherIcons";
 import getNextDays from "@/utils/getDays";
 import api from "./api";
 

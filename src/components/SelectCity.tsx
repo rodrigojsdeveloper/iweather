@@ -22,12 +22,7 @@ const SelectCity = ({ maxWidth }: ISelectCity) => {
       >
         {search !== "" &&
           cities.map((city, index) => (
-            <City
-              key={index}
-              city={city}
-              index={index}
-              cities={cities}
-            />
+            <City key={index} city={city} index={index} cities={cities} />
           ))}
       </div>
     </div>

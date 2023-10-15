@@ -26,7 +26,6 @@ const config: Config = {
       },
       maxWidth: {
         50: "50px",
-        140: "140px",
         412: "421.24px",
         448: "448px",
         716: "716px",
@@ -47,7 +46,6 @@ const config: Config = {
       },
       backgroundImage: {
         "background-weather": "url('./assets/background.png')",
-        "night": "url('./assets/night.png')",
       },
       fontSize: {
         "heading-hg": [
@@ -122,8 +120,8 @@ const config: Config = {
         ],
       },
       boxShadow: {
-        "def": "0px 4px 30px 0px #00000040"
-      }
+        "def": "0px 4px 30px 0px #00000040",
+      },
     },
   },
   plugins: [],

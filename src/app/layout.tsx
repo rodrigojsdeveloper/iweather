@@ -11,7 +11,8 @@ const nunito = Nunito({
 
 export const metadata: Metadata = {
   title: "iWeather",
-  description: "iWeather is a precise and intuitive weather forecast app to plan your day.",
+  description:
+    "iWeather is a precise and intuitive weather forecast app to plan your day.",
 };
 
 export default function RootLayout({
