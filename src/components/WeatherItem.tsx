@@ -2,14 +2,14 @@ import { IWeatherItem } from "@/interfaces";
 
 const WeatherItem = ({ icon, title, value }: IWeatherItem) => {
   return (
-    <div className="w-full h-56 flex flex-row justify-between items-center">
-      <div className="flex flex-row items-center gap-2.5">
+    <div className="w-full h-64 flex flex-row justify-between items-center max-sm:h-56">
+      <div className="flex flex-row items-center gap-x-3">
         {icon}
 
-        <p className="text-t-sm text-gray-200 max-sm:text-t-xs">{title}</p>
+        <p className="text-heading-xs text-gray-200">{title}</p>
       </div>
 
-      <p className="text-t-sm text-gray-100 max-sm:text-t-xs">{value}</p>
+      <p className="text-heading-xs text-gray-100">{value}</p>
     </div>
   );
 };

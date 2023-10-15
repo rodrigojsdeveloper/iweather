@@ -55,6 +55,7 @@ const getWeatherByCity = async ({
 
       nextDays.push({
         day: new Date(item.dt_txt),
+        status: item.weather[0].description,
         min: Math.floor(item.main.temp_min),
         max: Math.ceil(item.main.temp_max),
         weather: item.weather[0].description,

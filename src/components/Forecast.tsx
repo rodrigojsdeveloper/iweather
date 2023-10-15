@@ -8,25 +8,26 @@ const Forecast = () => {
 
   return (
     <div
-      className={`w-full h-220 bg-gray-800 p-4 rounded-def max-lg:p-3 ${
+      className={`w-full h-276 bg-gray-800 pt-7 pb-6 px-6 rounded-def ${
         isLoading ? "animate-pulse" : ""
-      } max-sm:h-166`}
+      } max-sm:h-176 max-lg:p-3`}
     >
       {!isLoading ? (
         <>
           <SubTitle title="5 day forecast" />
 
-          <div className="w-full flex flex-row items-center">
+          <div className="w-full flex flex-row font-bold">
             {nextDays.length > 0
               ? nextDays.map((day, key) => (
                   <NextDay
                     key={key}
                     day={day?.day}
                     src={day?.icon?.src}
+                    status={day?.status}
                     max_temp={`${day?.max}ºC`}
                     min_temp={`${day?.min}ºC`}
-                    width={120}
-                    height={120}
+                    width={67}
+                    height={67}
                   />
                 ))
               : null}

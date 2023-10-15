@@ -11,7 +11,7 @@ const City = ({ city, index, cities }: ICityComponent) => {
   return (
     <Link href="/weather">
       <div
-        className={`w-full h-54 bg-gray-500 py-4 px-5 mb-px text-t-md ${
+        className={`w-full h-54 bg-gray-500 py-4 px-5 mb-px text-t-md text-gray-100 ${
           index === 0 ? "rounded-t-def" : ""
         } ${
           index === cities.length - 1 ? "rounded-b-def" : ""

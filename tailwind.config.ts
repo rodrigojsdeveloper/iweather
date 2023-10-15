@@ -25,28 +25,33 @@ const config: Config = {
         transparent: "transparent",
       },
       maxWidth: {
-        50: "50px",
-        412: "421.24px",
-        448: "448px",
+        56: "56px",
+        431: "431px",
         716: "716px",
+      },
+      width: {
+        67: "67px",
       },
       height: {
         49: "49px",
         54: "54px",
         56: "56px",
-        166: "166px",
-        220: "220px",
+        64: "64px",
+        67: "67px",
+        176: "176px",
+        276: "276px",
+        292: "292px",
         304: "304px",
-        360: "360.2px",
-        395: "395px",
-        513: "513px",
-        613: "613px",
+        396: "396px",
+        398: "398px",
+        586: "586px",
+        690: "690px",
       },
       borderRadius: {
         "def": "8px",
       },
       backgroundImage: {
-        "background-weather": "url('./assets/background.png')",
+        "background-weather": "url('./assets/background.svg')",
       },
       fontSize: {
         "heading-hg": [

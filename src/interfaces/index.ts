@@ -3,7 +3,7 @@ import { Dispatch, SetStateAction } from "react";
 export interface InputProps {
   isLoading: boolean;
   onChange: React.ChangeEventHandler<HTMLInputElement>;
-  maxWidth?: "max-w-448";
+  maxWidth?: "max-w-431";
   value?: string | number | readonly string[];
 }
 
@@ -20,6 +20,7 @@ export interface ISubTitle {
 export interface INextDay {
   day: string;
   src: string;
+  status: string;
   max_temp: string;
   min_temp: string;
   width: any;
@@ -87,7 +88,7 @@ export interface IGetWeatherByCity extends IsLoading {
 }
 
 export interface ISelectCity {
-  maxWidth?: "max-w-448";
+  maxWidth?: "max-w-431";
 }
 
 export interface IWeatherProps {

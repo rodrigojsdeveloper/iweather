@@ -11,15 +11,15 @@ const Details = () => {
 
   return (
     <div
-      className={`w-full h-360 bg-gray-800 pt-6 pb-4 px-4 rounded-def max-sm:h-304 max-sm:py-3 ${
+      className={`w-full h-398 bg-gray-800 pt-7 pb-2 px-6 rounded-def ${
         isLoading ? "animate-pulse" : ""
-      }`}
+      } max-sm:h-292 max-sm:px-4 max-sm:py-1`}
     >
       {!isLoading ? (
         <>
           <SubTitle title="Weather details" />
 
-          <div>
+          <div className="font-bold">
             <WeatherItem
               icon={
                 <svg
