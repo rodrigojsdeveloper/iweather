@@ -4,13 +4,18 @@ import { ICity } from "@/interfaces";
 import Image from "next/image";
 
 const Today = ({ city }: ICity) => {
+  const [hour, period] = getCurrentTime().split(" ");
+
+  const currentHour = parseInt(hour);
+
+  const isDaytime = period === "AM" || (currentHour >= 6 && currentHour < 18);
+
   return (
     <div
       style={{
-        backgroundImage:
-          getCurrentTime().split(" ")[1] === "PM"
-            ? `url('${city?.weatherToday?.details?.bg_day.src}')`
-            : `url('${city?.weatherToday?.details?.bg_night.src}')`,
+        backgroundImage: isDaytime
+          ? `url('${city?.weatherToday?.details?.bg_day.src}')`
+          : `url('${city?.weatherToday?.details?.bg_night.src}')`,
       }}
       className="bg-cover bg-center bg-no-repeat w-full h-513 flex flex-col justify-between rounded-def p-8 max-lg:h-304 max-lg:p-5"
     >
@@ -43,7 +48,7 @@ const Today = ({ city }: ICity) => {
           </div>
         </div>
 
-        {getCurrentTime().split(" ")[1] === "PM" ? (
+        {isDaytime ? (
           <Image
             src={city?.weatherToday?.details?.icon_day.src}
             alt="icon day"
