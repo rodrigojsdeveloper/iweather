@@ -55,7 +55,7 @@ const Details = () => {
                 </svg>
               }
               title="Probability of rain"
-              value={`${details?.probability}%`}
+              value={`${details?.probability.toFixed(2)}%`}
             />
             <Line />
             <WeatherItem

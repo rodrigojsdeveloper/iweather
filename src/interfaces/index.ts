@@ -87,7 +87,6 @@ export interface IGetWeatherByCity extends IsLoading {
 }
 
 export interface ISelectCity {
-  onSelect: any;
   maxWidth?: "max-w-448";
 }
 
@@ -137,8 +136,6 @@ export interface ICityComponent {
   city: ICityProps;
   index: number;
   cities: ICityProps[];
-  onSelect: any;
-  setSearch: Dispatch<SetStateAction<string>>;
 }
 
 export interface IChildren {
@@ -149,8 +146,8 @@ export interface ICityContextData {
   isLoadingInput: boolean;
   setSearch: Dispatch<SetStateAction<string>>;
   cities: ICityProps[];
-  handleSelected: (city: ICityProps) => void;
   search: string;
+  setCities: Dispatch<SetStateAction<Array<ICityProps>>>;
 }
 
 export interface IWeatherContextData {
@@ -158,4 +155,5 @@ export interface IWeatherContextData {
   nextDays: any[];
   weather: IWeatherProps;
   city: ICityProps;
+  handleSelected: (city: ICityProps) => void;
 }

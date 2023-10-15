@@ -2,13 +2,10 @@
 import { IChildren, ICityProps, ICityContextData } from "../interfaces";
 import { createContext, useEffect, useState } from "react";
 import getCityByName from "@/services/getCityByName";
-import { useRouter } from "next/navigation";
 
 const CityContext = createContext({} as ICityContextData);
 
 const CityContextProvider = ({ children }: IChildren) => {
-  const router = useRouter();
-
   const [cities, setCities] = useState<Array<ICityProps>>([]);
 
   const [search, setSearch] = useState<string>("");
@@ -22,11 +19,6 @@ const CityContextProvider = ({ children }: IChildren) => {
 
     setCities(res);
     setIsLoadingInput(false);
-  };
-
-  const handleSelected = (city: ICityProps) => {
-    localStorage.setItem("iWeather: city", JSON.stringify(city));
-    router.push("/weather");
   };
 
   useEffect(() => {
@@ -44,8 +36,8 @@ const CityContextProvider = ({ children }: IChildren) => {
         isLoadingInput,
         setSearch,
         cities,
-        handleSelected,
         search,
+        setCities,
       }}
     >
       {children}

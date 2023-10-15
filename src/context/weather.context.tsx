@@ -1,11 +1,16 @@
 "use client";
-import { IChildren, IWeatherContextData } from "../interfaces";
+import { IChildren, ICityProps, IWeatherContextData } from "../interfaces";
 import { createContext, useEffect, useState } from "react";
 import getWeatherByCity from "@/services/getWeatherByCity";
+import { useRouter, usePathname } from "next/navigation";
 
 const WeatherContext = createContext({} as IWeatherContextData);
 
 const WeatherContextProvider = ({ children }: IChildren) => {
+  const router = useRouter();
+
+  const pathname = usePathname();
+
   const isBrowser = typeof window !== "undefined";
 
   const cityFromLocalStorage = isBrowser
@@ -21,6 +26,12 @@ const WeatherContextProvider = ({ children }: IChildren) => {
   const [nextDays, setNextDays] = useState<any[]>([]);
 
   const [isLoading, setIsLoading] = useState<boolean>(true);
+
+  const handleSelected = (city: ICityProps) => {
+    localStorage.setItem("iWeather: city", JSON.stringify(city));
+    setCity(city);
+    if (!(pathname === "/weather")) router.push("/weather");
+  };
 
   const fetchWeatherData = async (lat: number, lon: number) => {
     try {
@@ -49,6 +60,7 @@ const WeatherContextProvider = ({ children }: IChildren) => {
         weather,
         nextDays,
         isLoading,
+        handleSelected,
       }}
     >
       {children}

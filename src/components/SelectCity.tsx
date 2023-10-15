@@ -5,7 +5,7 @@ import { useContext } from "react";
 import Input from "./Input";
 import City from "./City";
 
-const SelectCity = ({ onSelect, maxWidth }: ISelectCity) => {
+const SelectCity = ({ maxWidth }: ISelectCity) => {
   const { isLoadingInput, setSearch, cities, search } = useContext(CityContext);
 
   return (
@@ -27,8 +27,6 @@ const SelectCity = ({ onSelect, maxWidth }: ISelectCity) => {
               city={city}
               index={index}
               cities={cities}
-              onSelect={onSelect}
-              setSearch={setSearch}
             />
           ))}
       </div>

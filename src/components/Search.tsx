@@ -1,13 +1,11 @@
 "use client";
 import { WeatherContext } from "@/context/weather.context";
-import { CityContext } from "@/context/city.context";
 import SelectCity from "./SelectCity";
 import { useContext } from "react";
 import Link from "next/link";
 import Today from "./Today";
 
 const Search = () => {
-  const { handleSelected } = useContext(CityContext);
   const { isLoading, city } = useContext(WeatherContext);
 
   return (
@@ -21,7 +19,7 @@ const Search = () => {
           <div className="w-full flex flex-row justify-between items-center gap-2 mb-2.5">
             <Link
               href="/"
-              className="w-full max-w-50 h-56 flex justify-center items-center bg-gray-600 p-2 rounded-def"
+              className="w-full max-w-50 h-56 flex justify-center items-center bg-gray-600 p-2 rounded-def hover:bg-gray-700"
             >
               <svg
                 width="32"
@@ -43,7 +41,7 @@ const Search = () => {
               </svg>
             </Link>
 
-            <SelectCity onSelect={handleSelected} />
+            <SelectCity />
           </div>
 
           <Today city={city} />

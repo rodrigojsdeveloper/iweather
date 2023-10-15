@@ -1,7 +1,13 @@
+import { WeatherContext } from "@/context/weather.context";
+import { CityContext } from "@/context/city.context";
 import { ICityComponent } from "@/interfaces";
+import { useContext } from "react";
 import Link from "next/link";
 
-const City = ({ city, index, cities, onSelect, setSearch }: ICityComponent) => {
+const City = ({ city, index, cities }: ICityComponent) => {
+  const { setSearch, setCities } = useContext(CityContext);
+  const { handleSelected } = useContext(WeatherContext);
+
   return (
     <Link href="/weather">
       <div
@@ -9,10 +15,11 @@ const City = ({ city, index, cities, onSelect, setSearch }: ICityComponent) => {
           index === 0 ? "rounded-t-def" : ""
         } ${
           index === cities.length - 1 ? "rounded-b-def" : ""
-        } duration-500 hover:bg-gray-600`}
+        } duration-200 hover:bg-gray-600`}
         onClick={() => {
-          onSelect(city);
+          handleSelected(city);
           setSearch("");
+          setCities([]);
         }}
       >
         {city.name}
