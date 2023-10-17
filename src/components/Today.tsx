@@ -1,19 +1,16 @@
+import isDaytime from "@/utils/getCurrentTime";
 import getCurrentTime from "@/utils/hours";
 import getCurrentDate from "@/utils/date";
 import { ICity } from "@/interfaces";
 import Image from "next/image";
 
 const Today = ({ city }: ICity) => {
-  const [hour, period] = getCurrentTime().split(" ");
-
-  const currentHour = parseInt(hour);
-
-  const isDaytime = period === "AM" || (currentHour >= 6 && currentHour < 18);
+  const isDay = isDaytime();
 
   return (
     <div
       style={{
-        backgroundImage: isDaytime
+        backgroundImage: isDay
           ? `url('${city?.weatherToday?.details?.bg_day.src}')`
           : `url('${city?.weatherToday?.details?.bg_night.src}')`,
       }}
@@ -50,7 +47,7 @@ const Today = ({ city }: ICity) => {
           </div>
         </div>
 
-        {isDaytime ? (
+        {isDay ? (
           <Image
             src={city?.weatherToday?.details?.icon_day.src}
             alt="icon day"

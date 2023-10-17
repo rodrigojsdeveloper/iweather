@@ -1,15 +1,7 @@
 import { INextDay } from "@/interfaces";
 import Image from "next/image";
 
-const NextDay = ({
-  day,
-  src,
-  status,
-  max_temp,
-  min_temp,
-  width,
-  height,
-}: INextDay) => {
+const NextDay = ({ day, src, status, max, min, width, height }: INextDay) => {
   const currentDate = new Date(day);
 
   return (
@@ -32,8 +24,8 @@ const NextDay = ({
         </p>
 
         <div className="flex flex-row items-center gap-x-2 max-sm:flex-col max-sm:gap-0">
-          <p className="text-heading-xs text-gray-100">{max_temp}</p>
-          <p className="text-heading-xs text-gray-400">{min_temp}</p>
+          <p className="text-heading-xs text-gray-100">{max}</p>
+          <p className="text-heading-xs text-gray-400">{min}</p>
         </div>
       </div>
     </div>

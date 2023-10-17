@@ -1,4 +1,5 @@
 import { Nunito } from "next/font/google";
+import { PropsWithChildren } from "react";
 import { Providers } from "@/context";
 import type { Metadata } from "next";
 import "dotenv/config.js";
@@ -15,11 +16,7 @@ export const metadata: Metadata = {
     "iWeather is a precise and intuitive weather forecast app to plan your day.",
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: PropsWithChildren) {
   return (
     <html lang="en">
       <head>

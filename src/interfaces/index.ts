@@ -10,7 +10,7 @@ export interface InputProps {
 export interface IWeatherItem {
   icon: any;
   title: string;
-  value: string;
+  value?: string;
 }
 
 export interface ISubTitle {
@@ -21,10 +21,10 @@ export interface INextDay {
   day: string;
   src: string;
   status: string;
-  max_temp: string;
-  min_temp: string;
-  width: any;
-  height: any;
+  max: string;
+  min: string;
+  width: number;
+  height: number;
 }
 
 export interface ICityProps {
@@ -130,10 +130,6 @@ export interface ICityComponent {
   cities: ICityProps[];
 }
 
-export interface IChildren {
-  children: React.ReactNode;
-}
-
 export interface ICityContextData {
   isLoadingInput: boolean;
   setSearch: Dispatch<SetStateAction<string>>;
@@ -144,8 +140,8 @@ export interface ICityContextData {
 
 export interface IWeatherContextData {
   isLoading: boolean;
-  nextDays: any[];
-  weather: IWeatherProps;
+  nextDays: INextDay[];
+  weather: ITodayProps;
   city: ICityProps;
   handleSelected: (city: ICityProps) => void;
 }

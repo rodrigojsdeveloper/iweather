@@ -1,23 +1,25 @@
 "use client";
-import { IChildren, ICityProps, IWeatherContextData } from "../interfaces";
-import { createContext, useEffect, useState } from "react";
+import { PropsWithChildren, createContext, useEffect, useState } from "react";
 import getWeatherByCity from "@/services/getWeatherByCity";
 import { useRouter, usePathname } from "next/navigation";
+import {
+  ICityProps,
+  INextDay,
+  ITodayProps,
+  IWeatherContextData,
+} from "../interfaces";
 
 const WeatherContext = createContext({} as IWeatherContextData);
 
-const WeatherContextProvider = ({ children }: IChildren) => {
+const WeatherContextProvider = ({ children }: PropsWithChildren) => {
   const router = useRouter();
-
   const pathname = usePathname();
-
   const isBrowser = typeof window !== "undefined";
-
   const cityFromLocalStorage = isBrowser
     ? localStorage.getItem("iWeather: city")
     : null;
 
-  const [weather, setWeather] = useState<any>();
+  const [weather, setWeather] = useState<ITodayProps>({} as ITodayProps);
 
   const [city, setCity] = useState<any>(
     isBrowser && cityFromLocalStorage ? JSON.parse(cityFromLocalStorage) : null
@@ -27,17 +29,17 @@ const WeatherContextProvider = ({ children }: IChildren) => {
 
   const [isLoading, setIsLoading] = useState<boolean>(true);
 
-  const handleSelected = (city: ICityProps) => {
-    localStorage.setItem("iWeather: city", JSON.stringify(city));
-    setCity(city);
-    if (!(pathname === "/weather")) router.push("/weather");
+  const handleSelected = (selectedCity: ICityProps) => {
+    localStorage.setItem("iWeather: city", JSON.stringify(selectedCity));
+    setCity(selectedCity);
+    if (pathname !== "/weather") router.push("/weather");
   };
 
   const fetchWeatherData = async (lat: number, lon: number) => {
     try {
       const weatherData = await getWeatherByCity({ lat, lon, setIsLoading });
       setWeather(weatherData.today);
-      setCity((prevCity: any) => ({
+      setCity((prevCity: ICityProps) => ({
         ...prevCity,
         weatherToday: weatherData?.today?.weather,
       }));
@@ -53,16 +55,16 @@ const WeatherContextProvider = ({ children }: IChildren) => {
     }
   }, [city?.coord, cityFromLocalStorage]);
 
+  const weatherContextData: IWeatherContextData = {
+    city,
+    weather,
+    nextDays,
+    isLoading,
+    handleSelected,
+  };
+
   return (
-    <WeatherContext.Provider
-      value={{
-        city,
-        weather,
-        nextDays,
-        isLoading,
-        handleSelected,
-      }}
-    >
+    <WeatherContext.Provider value={weatherContextData}>
       {children}
     </WeatherContext.Provider>
   );

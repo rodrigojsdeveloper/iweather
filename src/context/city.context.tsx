@@ -1,23 +1,23 @@
 "use client";
-import { IChildren, ICityProps, ICityContextData } from "../interfaces";
-import { createContext, useEffect, useState } from "react";
+import { createContext, useEffect, useState, PropsWithChildren } from "react";
+import { ICityProps, ICityContextData } from "../interfaces";
 import getCityByName from "@/services/getCityByName";
 
 const CityContext = createContext({} as ICityContextData);
 
-const CityContextProvider = ({ children }: IChildren) => {
+const CityContextProvider = ({ children }: PropsWithChildren) => {
   const [cities, setCities] = useState<Array<ICityProps>>([]);
 
   const [search, setSearch] = useState<string>("");
 
   const [isLoadingInput, setIsLoadingInput] = useState<boolean>(false);
 
-  const getCities = async (name: string) => {
+  const fetchCities = async (name: string) => {
     setIsLoadingInput(true);
 
-    const res = await getCityByName(name);
+    const fetchedCities = await getCityByName(name);
 
-    setCities(res);
+    setCities(fetchedCities);
     setIsLoadingInput(false);
   };
 
@@ -26,20 +26,20 @@ const CityContextProvider = ({ children }: IChildren) => {
       return;
     }
 
-    const debounce = setTimeout(() => getCities(search), 500);
+    const debounce = setTimeout(() => fetchCities(search), 500);
     return () => clearInterval(debounce);
   }, [search]);
 
+  const cityContextData: ICityContextData = {
+    isLoadingInput,
+    setSearch,
+    cities,
+    search,
+    setCities,
+  };
+
   return (
-    <CityContext.Provider
-      value={{
-        isLoadingInput,
-        setSearch,
-        cities,
-        search,
-        setCities,
-      }}
-    >
+    <CityContext.Provider value={cityContextData}>
       {children}
     </CityContext.Provider>
   );
