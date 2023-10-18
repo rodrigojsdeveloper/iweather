@@ -1,9 +1,9 @@
-"use client";
-import SelectCity from "@/components/SelectCity";
+'use client'
+import SelectCity from '@/components/SelectCity'
 
 export default function Home() {
   return (
-    <div className="bg-background-weather bg-cover bg-center bg-no-repeat min-h-screen flex flex-col items-center p-12 max-sm:px-8">
+    <div className="bg-backgroundWeather flex min-h-screen flex-col items-center bg-cover bg-center bg-no-repeat p-12 max-sm:px-8">
       <header className="mb-40 max-sm:mb-48">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -55,10 +55,10 @@ export default function Home() {
         </svg>
       </header>
 
-      <main className="w-full max-w-431 flex flex-col items-center text-center mb-14 max-sm:mb-8">
-        <h1 className="flex flex-row items-center flex-wrap justify-center font-bold text-heading-lg max-sm:text-heading-md">
-          Welcome to{" "}
-          <p className="text-blueLight ml-2 max-sm:ml-1.5">iWeather</p>
+      <main className="mb-14 flex w-full max-w-431 flex-col items-center text-center max-sm:mb-8">
+        <h1 className="flex flex-row flex-wrap items-center justify-center text-heading-lg font-bold max-sm:text-heading-md">
+          Welcome to{' '}
+          <p className="ml-2 text-blueLight max-sm:ml-1.5">iWeather</p>
         </h1>
 
         <p className="text-t-lg text-gray-200 max-sm:text-t-sm">
@@ -68,5 +68,5 @@ export default function Home() {
 
       <SelectCity maxWidth="max-w-431" />
     </div>
-  );
+  )
 }

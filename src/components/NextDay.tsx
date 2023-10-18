@@ -1,25 +1,25 @@
-import { INextDay } from "@/interfaces";
-import Image from "next/image";
+import { INextDay } from '@/interfaces'
+import Image from 'next/image'
 
 const NextDay = ({ day, src, status, max, min, width, height }: INextDay) => {
-  const currentDate = new Date(day);
+  const currentDate = new Date(day)
 
   return (
-    <div className="w-full flex flex-col items-center text-center gap-y-3 max-sm:gap-y-1">
+    <div className="flex w-full flex-col items-center gap-y-3 text-center max-sm:gap-y-1">
       <p className="text-heading-xs text-gray-200">
-        {currentDate.toLocaleDateString("en-US", { weekday: "short" })}
+        {currentDate.toLocaleDateString('en-US', { weekday: 'short' })}
       </p>
 
       <Image
         src={src}
         alt="weather"
-        className="w-67 h-67 object-contain"
+        className="h-67 w-67 object-contain"
         width={width}
         height={height}
       />
 
       <div className="flex flex-col items-center gap-y-1 max-sm:gap-0">
-        <p className="font-normal text-t-sm text-gray-200 max-sm:hidden">
+        <p className="text-t-sm font-normal text-gray-200 max-sm:hidden">
           {status}
         </p>
 
@@ -29,7 +29,7 @@ const NextDay = ({ day, src, status, max, min, width, height }: INextDay) => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default NextDay;
+export default NextDay

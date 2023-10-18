@@ -1,20 +1,20 @@
-import { Nunito } from "next/font/google";
-import { PropsWithChildren } from "react";
-import { Providers } from "@/context";
-import type { Metadata } from "next";
-import "dotenv/config.js";
-import "./globals.css";
+import { Nunito } from 'next/font/google'
+import { PropsWithChildren } from 'react'
+import { Providers } from '@/context'
+import type { Metadata } from 'next'
+import 'dotenv/config.js'
+import './globals.css'
 
 const nunito = Nunito({
-  weight: ["300", "400", "500", "600", "700"],
-  subsets: ["latin"],
-});
+  weight: ['300', '400', '500', '600', '700'],
+  subsets: ['latin'],
+})
 
 export const metadata: Metadata = {
-  title: "iWeather",
+  title: 'iWeather',
   description:
-    "iWeather is a precise and intuitive weather forecast app to plan your day.",
-};
+    'iWeather is a precise and intuitive weather forecast app to plan your day.',
+}
 
 export default function RootLayout({ children }: PropsWithChildren) {
   return (
@@ -32,5 +32,5 @@ export default function RootLayout({ children }: PropsWithChildren) {
         <Providers>{children}</Providers>
       </body>
     </html>
-  );
+  )
 }

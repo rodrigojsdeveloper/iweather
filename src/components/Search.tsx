@@ -1,25 +1,25 @@
-"use client";
-import { WeatherContext } from "@/context/weather.context";
-import SelectCity from "./SelectCity";
-import { useContext } from "react";
-import Link from "next/link";
-import Today from "./Today";
+'use client'
+import { WeatherContext } from '@/context/weather.context'
+import SelectCity from './SelectCity'
+import { useContext } from 'react'
+import Link from 'next/link'
+import Today from './Today'
 
 const Search = () => {
-  const { isLoading, city } = useContext(WeatherContext);
+  const { isLoading, city } = useContext(WeatherContext)
 
   return (
     <div
-      className={`w-full max-w-716 h-690 bg-gray-800 p-4 rounded-def ${
-        isLoading ? "animate-pulse" : ""
-      } max-lg:max-w-none max-lg:p-3 max-lg:h-396`}
+      className={`h-690 w-full max-w-716 rounded-def bg-gray-800 p-4 ${
+        isLoading ? 'animate-pulse' : ''
+      } max-lg:h-396 max-lg:max-w-none max-lg:p-3`}
     >
       {!isLoading ? (
         <>
-          <div className="w-full flex flex-row justify-between items-center gap-x-3 mb-4 max-lg:gap-x-2 max-lg:mb-3">
+          <div className="mb-4 flex w-full flex-row items-center justify-between gap-x-3 max-lg:mb-3 max-lg:gap-x-2">
             <Link
               href="/"
-              className="w-full max-w-56 h-56 flex justify-center items-center bg-gray-600 p-1 rounded-def hover:bg-gray-700"
+              className="flex h-56 w-full max-w-56 items-center justify-center rounded-def bg-gray-600 p-1 hover:bg-gray-700"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -46,7 +46,7 @@ const Search = () => {
         </>
       ) : null}
     </div>
-  );
-};
+  )
+}
 
-export default Search;
+export default Search

@@ -53,7 +53,6 @@ docker build . -t dockerized-iweather
 
 
 # Check if the image was created
-
 docker images | grep dockerized-iweather
 
 

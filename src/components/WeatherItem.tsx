@@ -1,8 +1,8 @@
-import { IWeatherItem } from "@/interfaces";
+import { IWeatherItem } from '@/interfaces'
 
 const WeatherItem = ({ icon, title, value }: IWeatherItem) => {
   return (
-    <div className="w-full h-64 flex flex-row justify-between items-center max-sm:h-56">
+    <div className="flex h-64 w-full flex-row items-center justify-between max-sm:h-56">
       <div className="flex flex-row items-center gap-x-3">
         {icon}
 
@@ -11,7 +11,7 @@ const WeatherItem = ({ icon, title, value }: IWeatherItem) => {
 
       <p className="text-heading-xs text-gray-100">{value}</p>
     </div>
-  );
-};
+  )
+}
 
-export default WeatherItem;
+export default WeatherItem

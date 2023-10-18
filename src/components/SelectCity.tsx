@@ -1,12 +1,12 @@
-"use client";
-import { CityContext } from "@/context/city.context";
-import { ISelectCity } from "@/interfaces";
-import { useContext } from "react";
-import Input from "./Input";
-import City from "./City";
+'use client'
+import { CityContext } from '@/context/city.context'
+import { ISelectCity } from '@/interfaces'
+import { useContext } from 'react'
+import Input from './Input'
+import City from './City'
 
 const SelectCity = ({ maxWidth }: ISelectCity) => {
-  const { isLoadingInput, setSearch, cities, search } = useContext(CityContext);
+  const { isLoadingInput, setSearch, cities, search } = useContext(CityContext)
 
   return (
     <div className={`w-full ${maxWidth} relative`}>
@@ -18,15 +18,15 @@ const SelectCity = ({ maxWidth }: ISelectCity) => {
       />
 
       <div
-        className={`w-full ${maxWidth} absolute shadow-def rounded-def mt-2`}
+        className={`w-full ${maxWidth} absolute mt-2 rounded-def shadow-def`}
       >
-        {search !== "" &&
+        {search !== '' &&
           cities.map((city, index) => (
             <City key={index} city={city} index={index} cities={cities} />
           ))}
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default SelectCity;
+export default SelectCity

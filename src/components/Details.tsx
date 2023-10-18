@@ -1,18 +1,18 @@
-import { WeatherContext } from "@/context/weather.context";
-import WeatherItem from "./WeatherItem";
-import { useContext } from "react";
-import SubTitle from "./SubTitle";
-import Line from "./Line";
+import { WeatherContext } from '@/context/weather.context'
+import WeatherItem from './WeatherItem'
+import { useContext } from 'react'
+import SubTitle from './SubTitle'
+import Line from './Line'
 
 const Details = () => {
-  const { isLoading, weather } = useContext(WeatherContext);
+  const { isLoading, weather } = useContext(WeatherContext)
 
-  const details = weather ? weather.details : null;
+  const details = weather ? weather.details : null
 
   return (
     <div
-      className={`w-full h-398 bg-gray-800 pt-7 pb-2 px-6 rounded-def ${
-        isLoading ? "animate-pulse" : ""
+      className={`h-398 w-full rounded-def bg-gray-800 px-6 pb-2 pt-7 ${
+        isLoading ? 'animate-pulse' : ''
       } max-sm:h-292 max-sm:px-4 max-sm:py-1`}
     >
       {!isLoading ? (
@@ -118,7 +118,7 @@ const Details = () => {
         </>
       ) : null}
     </div>
-  );
-};
+  )
+}
 
-export default Details;
+export default Details

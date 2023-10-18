@@ -1,15 +1,15 @@
-import api from "./api";
+import api from './api'
 
 const getCityByName = async (name: string) => {
   try {
     const { data } = await api.get(
-      `weather?q=${name}&appid=3d29a3d19ffccad965f9c63d15f593c1`
-    );
+      `weather?q=${name}&appid=3d29a3d19ffccad965f9c63d15f593c1`,
+    )
 
-    return [data];
+    return [data]
   } catch (error) {
-    return [];
+    return []
   }
-};
+}
 
-export default getCityByName;
+export default getCityByName

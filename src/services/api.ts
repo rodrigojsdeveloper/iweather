@@ -1,15 +1,15 @@
-import axios from "axios";
-import "dotenv/config";
+import axios from 'axios'
+import 'dotenv/config'
 
-const { API_KEY } = process.env;
+const { API_KEY } = process.env
 
 const api = axios.create({
-  baseURL: "https://api.openweathermap.org/data/2.5/",
+  baseURL: 'https://api.openweathermap.org/data/2.5/',
   params: {
-    lang: "en",
-    units: "metric",
+    lang: 'en',
+    units: 'metric',
     appid: API_KEY,
   },
-});
+})
 
-export default api;
+export default api

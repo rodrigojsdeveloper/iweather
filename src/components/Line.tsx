@@ -1,5 +1,5 @@
 const Line = () => {
-  return <div className="w-full h-px bg-gray-700" />;
-};
+  return <div className="h-px w-full bg-gray-700" />
+}
 
-export default Line;
+export default Line

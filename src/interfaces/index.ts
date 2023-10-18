@@ -1,147 +1,147 @@
-import { Dispatch, SetStateAction } from "react";
+import { Dispatch, SetStateAction } from 'react'
 
 export interface InputProps {
-  isLoading: boolean;
-  onChange: React.ChangeEventHandler<HTMLInputElement>;
-  maxWidth?: "max-w-431";
-  value?: string | number | readonly string[];
+  isLoading: boolean
+  onChange: React.ChangeEventHandler<HTMLInputElement>
+  maxWidth?: 'max-w-431'
+  value?: string | number | readonly string[]
 }
 
 export interface IWeatherItem {
-  icon: any;
-  title: string;
-  value?: string;
+  icon: any
+  title: string
+  value?: string
 }
 
 export interface ISubTitle {
-  title: string;
+  title: string
 }
 
 export interface INextDay {
-  day: string;
-  src: string;
-  status: string;
-  max: string;
-  min: string;
-  width: number;
-  height: number;
+  day: string
+  src: string
+  status: string
+  max: string
+  min: string
+  width: number
+  height: number
 }
 
 export interface ICityProps {
   coord: {
-    lon: number;
-    lat: number;
-  };
+    lon: number
+    lat: number
+  }
   weather: [
     {
-      id: number;
-      main: string;
-      description: string;
-      icon: string;
-    }
-  ];
-  base: string;
+      id: number
+      main: string
+      description: string
+      icon: string
+    },
+  ]
+  base: string
   main: {
-    temp: number;
-    feels_like: number;
-    temp_min: number;
-    temp_max: number;
-    pressure: number;
-    humidity: number;
-    sea_level: number;
-    grnd_level: number;
-  };
-  visibility: number;
+    temp: number
+    feels_like: number
+    temp_min: number
+    temp_max: number
+    pressure: number
+    humidity: number
+    sea_level: number
+    grnd_level: number
+  }
+  visibility: number
   wind: {
-    speed: number;
-    deg: number;
-    gust: number;
-  };
+    speed: number
+    deg: number
+    gust: number
+  }
   clouds: {
-    all: number;
-  };
-  dt: number;
+    all: number
+  }
+  dt: number
   sys: {
-    country: string;
-    sunrise: number;
-    sunset: number;
-  };
-  timezone: number;
-  id: number;
-  name: string;
-  cod: number;
-  weatherToday?: any;
+    country: string
+    sunrise: number
+    sunset: number
+  }
+  timezone: number
+  id: number
+  name: string
+  cod: number
+  weatherToday?: any
 }
 
 export interface IsLoading {
-  isLoading?: boolean;
-  setIsLoading?: any;
+  isLoading?: boolean
+  setIsLoading?: any
 }
 
 export interface ICity extends IsLoading {
-  city: ICityProps;
+  city: ICityProps
 }
 
 export interface IGetWeatherByCity extends IsLoading {
-  lat: number;
-  lon: number;
+  lat: number
+  lon: number
 }
 
 export interface ISelectCity {
-  maxWidth?: "max-w-431";
+  maxWidth?: 'max-w-431'
 }
 
 export interface IWeatherProps {
-  temp: number;
-  temp_min: number;
-  temp_max: number;
-  description: string;
-  details: any;
+  temp: number
+  temp_min: number
+  temp_max: number
+  description: string
+  details: any
 }
 
 export interface IDetailsProps {
-  feels_like: number;
-  probability: number;
-  wind_speed: number;
-  humidity: number;
-  temp_kf: number;
+  feels_like: number
+  probability: number
+  wind_speed: number
+  humidity: number
+  temp_kf: number
 }
 
 export interface IWeather {
-  weather: IWeatherProps;
+  weather: IWeatherProps
 }
 
 export interface IDetails extends IsLoading {
-  details: IDetailsProps;
+  details: IDetailsProps
 }
 
 export interface ITodayProps {
-  weather: IWeatherProps;
-  details: IDetailsProps;
+  weather: IWeatherProps
+  details: IDetailsProps
 }
 
 export interface IWeatherIcons {
-  [key: string]: any;
+  [key: string]: any
 }
 
 export interface ICityComponent {
-  city: ICityProps;
-  index: number;
-  cities: ICityProps[];
+  city: ICityProps
+  index: number
+  cities: ICityProps[]
 }
 
 export interface ICityContextData {
-  isLoadingInput: boolean;
-  setSearch: Dispatch<SetStateAction<string>>;
-  cities: ICityProps[];
-  search: string;
-  setCities: Dispatch<SetStateAction<Array<ICityProps>>>;
+  isLoadingInput: boolean
+  setSearch: Dispatch<SetStateAction<string>>
+  cities: ICityProps[]
+  search: string
+  setCities: Dispatch<SetStateAction<Array<ICityProps>>>
 }
 
 export interface IWeatherContextData {
-  isLoading: boolean;
-  nextDays: INextDay[];
-  weather: ITodayProps;
-  city: ICityProps;
-  handleSelected: (city: ICityProps) => void;
+  isLoading: boolean
+  nextDays: any[]
+  weather: ITodayProps
+  city: ICityProps
+  handleSelected: (city: ICityProps) => void
 }

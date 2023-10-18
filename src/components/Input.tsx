@@ -1,16 +1,16 @@
-import { InputProps } from "@/interfaces";
+import { InputProps } from '@/interfaces'
 
 const Input = ({ isLoading, onChange, maxWidth, value }: InputProps) => {
   return (
     <div
       className={`w-full ${
-        maxWidth ? maxWidth : ""
-      } h-56 flex flex-row items-center bg-gray-600 py-4 pl-5 pr-2.5 rounded-def ${
-        isLoading ? "text-gray-400" : ""
+        maxWidth || ''
+      } flex h-56 flex-row items-center rounded-def bg-gray-600 py-4 pl-5 pr-2.5 ${
+        isLoading ? 'text-gray-400' : ''
       }`}
     >
       <input
-        className="w-full mr-2 bg-transparent placeholder:text-gray-400 focus:placeholder:text-transparent disabled:cursor-default"
+        className="mr-2 w-full bg-transparent placeholder:text-gray-400 focus:placeholder:text-transparent disabled:cursor-default"
         placeholder="Search location"
         onChange={onChange}
         disabled={isLoading}
@@ -33,7 +33,7 @@ const Input = ({ isLoading, onChange, maxWidth, value }: InputProps) => {
         </svg>
       ) : null}
     </div>
-  );
-};
+  )
+}
 
-export default Input;
+export default Input
