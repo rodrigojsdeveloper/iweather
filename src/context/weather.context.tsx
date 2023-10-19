@@ -1,8 +1,13 @@
 'use client'
 import { PropsWithChildren, createContext, useEffect, useState } from 'react'
-import { ICityProps, ITodayProps, IWeatherContextData } from '../interfaces'
 import getWeatherByCity from '@/services/getWeatherByCity'
 import { useRouter, usePathname } from 'next/navigation'
+import {
+  ICityProps,
+  INextDayProps,
+  ITodayDetailsProps,
+  IWeatherContextData,
+} from '../interfaces'
 
 const WeatherContext = createContext({} as IWeatherContextData)
 
@@ -14,13 +19,15 @@ const WeatherContextProvider = ({ children }: PropsWithChildren) => {
     ? localStorage.getItem('iWeather: city')
     : null
 
-  const [weather, setWeather] = useState<ITodayProps>({} as ITodayProps)
+  const [today, setToday] = useState<ITodayDetailsProps>(
+    {} as ITodayDetailsProps,
+  )
 
-  const [city, setCity] = useState<any>(
+  const [city, setCity] = useState<ICityProps>(
     isBrowser && cityFromLocalStorage ? JSON.parse(cityFromLocalStorage) : null,
   )
 
-  const [nextDays, setNextDays] = useState<any[]>([])
+  const [nextDays, setNextDays] = useState<Array<INextDayProps>>([])
 
   const [isLoading, setIsLoading] = useState<boolean>(true)
 
@@ -33,7 +40,7 @@ const WeatherContextProvider = ({ children }: PropsWithChildren) => {
   const fetchWeatherData = async (lat: number, lon: number) => {
     try {
       const weatherData = await getWeatherByCity({ lat, lon, setIsLoading })
-      setWeather(weatherData.today)
+      setToday(weatherData.today.details)
       setCity((prevCity: ICityProps) => ({
         ...prevCity,
         weatherToday: weatherData?.today?.weather,
@@ -52,7 +59,7 @@ const WeatherContextProvider = ({ children }: PropsWithChildren) => {
 
   const weatherContextData: IWeatherContextData = {
     city,
-    weather,
+    today,
     nextDays,
     isLoading,
     handleSelected,

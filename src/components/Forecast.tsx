@@ -18,17 +18,8 @@ const Forecast = () => {
 
           <div className="flex w-full flex-row font-bold">
             {nextDays.length > 0
-              ? nextDays.map((day, key) => (
-                  <NextDay
-                    key={key}
-                    day={day?.day}
-                    src={day?.icon?.src}
-                    status={day?.status}
-                    max={`${day?.max}ºC`}
-                    min={`${day?.min}ºC`}
-                    width={67}
-                    height={67}
-                  />
+              ? nextDays.map((nextDay, key) => (
+                  <NextDay key={key} nextDay={nextDay} />
                 ))
               : null}
           </div>

@@ -3,7 +3,7 @@ import SelectCity from '@/components/SelectCity'
 
 export default function Home() {
   return (
-    <div className="bg-backgroundWeather flex min-h-screen flex-col items-center bg-cover bg-center bg-no-repeat p-12 max-sm:px-8">
+    <div className="flex min-h-screen flex-col items-center bg-backgroundWeather bg-cover bg-center bg-no-repeat p-12 max-sm:px-8">
       <header className="mb-40 max-sm:mb-48">
         <svg
           xmlns="http://www.w3.org/2000/svg"

@@ -6,7 +6,7 @@ import Link from 'next/link'
 import Today from './Today'
 
 const Search = () => {
-  const { isLoading, city } = useContext(WeatherContext)
+  const { isLoading } = useContext(WeatherContext)
 
   return (
     <div
@@ -42,7 +42,7 @@ const Search = () => {
             <SelectCity />
           </div>
 
-          <Today city={city} />
+          <Today />
         </>
       ) : null}
     </div>

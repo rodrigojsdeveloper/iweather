@@ -1,7 +1,12 @@
-import { IGetWeatherByCity, ITodayProps } from '@/interfaces'
 import weathers from '@/utils/weatherIcons'
 import getNextDays from '@/utils/getDays'
 import api from './api'
+import {
+  IForecast,
+  IGetWeatherByCity,
+  INextDayProps,
+  ITodayProps,
+} from '@/interfaces'
 
 const getWeatherByCity = async ({
   lat,
@@ -36,17 +41,17 @@ const getWeatherByCity = async ({
   }
 
   const days = getNextDays()
-  const daysAdded: string[] = []
-  const nextDays: any[] = []
+  const daysAdded: Array<string> = []
+  const nextDays: Array<INextDayProps> = []
 
-  data.list.forEach((item: any) => {
-    const day = new Date(item.dt_txt)
+  data.list.forEach((forecast: IForecast) => {
+    const day = new Date(forecast.dt_txt)
     const formattedDate = `${day.getDate().toString().padStart(2, '0')}/${(
       day.getMonth() + 1
     )
       .toString()
       .padStart(2, '0')}`
-    const status = item.weather[0].main
+    const status = forecast.weather[0].main
 
     const details = weathers[status.toLowerCase() ?? 'clouds']
 
@@ -54,11 +59,11 @@ const getWeatherByCity = async ({
       daysAdded.push(formattedDate)
 
       nextDays.push({
-        day: new Date(item.dt_txt),
-        status: item.weather[0].description,
-        min: Math.floor(item.main.temp_min),
-        max: Math.ceil(item.main.temp_max),
-        weather: item.weather[0].description,
+        day: new Date(forecast.dt_txt),
+        status: forecast.weather[0].description,
+        min: Math.floor(forecast.main.temp_min),
+        max: Math.ceil(forecast.main.temp_max),
+        weather: forecast.weather[0].description,
         icon: details.icon_day,
       })
     }

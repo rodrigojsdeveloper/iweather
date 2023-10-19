@@ -5,9 +5,7 @@ import SubTitle from './SubTitle'
 import Line from './Line'
 
 const Details = () => {
-  const { isLoading, weather } = useContext(WeatherContext)
-
-  const details = weather ? weather.details : null
+  const { isLoading, today } = useContext(WeatherContext)
 
   return (
     <div
@@ -36,7 +34,7 @@ const Details = () => {
                 </svg>
               }
               title="Thermal sensation"
-              value={`${details?.feels_like}ºC`}
+              value={`${today.feels_like}ºC`}
             />
             <Line />
             <WeatherItem
@@ -55,7 +53,7 @@ const Details = () => {
                 </svg>
               }
               title="Probability of rain"
-              value={`${details?.probability.toFixed(2)}%`}
+              value={`${today.probability.toFixed(2)}%`}
             />
             <Line />
             <WeatherItem
@@ -74,7 +72,7 @@ const Details = () => {
                 </svg>
               }
               title="Wind speed"
-              value={`${details?.wind_speed} km/h`}
+              value={`${today.wind_speed} km/h`}
             />
             <Line />
             <WeatherItem
@@ -93,7 +91,7 @@ const Details = () => {
                 </svg>
               }
               title="Air humidity"
-              value={`${details?.humidity}%`}
+              value={`${today.humidity}%`}
             />
             <Line />
             <WeatherItem
@@ -112,7 +110,7 @@ const Details = () => {
                 </svg>
               }
               title="UV Index"
-              value={details?.temp_kf.toString()}
+              value={today.temp_kf.toString()}
             />
           </div>
         </>

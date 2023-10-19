@@ -1,18 +1,20 @@
+import { WeatherContext } from '@/context/weather.context'
 import isDaytime from '@/utils/getCurrentTime'
 import getCurrentTime from '@/utils/hours'
 import getCurrentDate from '@/utils/date'
-import { ICity } from '@/interfaces'
+import { useContext } from 'react'
 import Image from 'next/image'
 
-const Today = ({ city }: ICity) => {
+const Today = () => {
+  const { city } = useContext(WeatherContext)
   const isDay = isDaytime()
 
   return (
     <div
       style={{
         backgroundImage: isDay
-          ? `url('${city?.weatherToday?.details?.bg_day.src}')`
-          : `url('${city?.weatherToday?.details?.bg_night.src}')`,
+          ? `url('${city.weatherToday?.details.bg_day.src}')`
+          : `url('${city.weatherToday?.details.bg_night.src}')`,
       }}
       className="flex h-586 w-full flex-col justify-between rounded-def bg-cover bg-center bg-no-repeat p-8 max-lg:h-304 max-lg:p-5"
     >
@@ -49,14 +51,14 @@ const Today = ({ city }: ICity) => {
 
         {isDay ? (
           <Image
-            src={city?.weatherToday?.details?.icon_day.src}
+            src={city.weatherToday?.details.icon_day.src}
             alt="icon day"
             width={130}
             height={130}
           />
         ) : (
           <Image
-            src={city?.weatherToday?.details?.icon_night.src}
+            src={city.weatherToday?.details.icon_night.src}
             alt="icon night"
             width={130}
             height={130}
