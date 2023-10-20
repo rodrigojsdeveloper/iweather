@@ -43,7 +43,7 @@ const WeatherContextProvider = ({ children }: PropsWithChildren) => {
       setToday(weatherData.today.details)
       setCity((prevCity: ICityProps) => ({
         ...prevCity,
-        weatherToday: weatherData?.today?.weather,
+        weatherToday: weatherData.today.weather,
       }))
       setNextDays(weatherData.nextDays)
     } catch (error) {
@@ -53,7 +53,7 @@ const WeatherContextProvider = ({ children }: PropsWithChildren) => {
 
   useEffect(() => {
     if (cityFromLocalStorage) {
-      fetchWeatherData(city?.coord?.lat, city?.coord?.lon)
+      fetchWeatherData(city.coord.lat, city.coord.lon)
     }
   }, [city?.coord, cityFromLocalStorage])
 

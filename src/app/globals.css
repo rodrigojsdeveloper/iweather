@@ -40,3 +40,7 @@ a {
   border-radius: 0.5px;
   background-color: #1c1c27;
 }
+
+::selection {
+  background-color: rgba(127, 127, 152, 0.1);
+}
