@@ -12,6 +12,7 @@
     "axios": "^1.5.1",
     "dotenv": "^16.3.1",
     "next": "13.5.4",
+    "prettier": "^3.0",
     "react": "^18",
     "react-dom": "^18"
   },
