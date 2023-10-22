@@ -6,7 +6,7 @@ import getCityByName from '@/services/getCityByName'
 const CityContext = createContext({} as ICityContextData)
 
 const CityContextProvider = ({ children }: PropsWithChildren) => {
-  const [cities, setCities] = useState<Array<ICityProps>>([])
+  const [cities, setCities] = useState<ICityProps[]>([])
 
   const [search, setSearch] = useState<string>('')
 

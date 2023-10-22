@@ -41,8 +41,8 @@ const getWeatherByCity = async ({
   }
 
   const days = getNextDays()
-  const daysAdded: Array<string> = []
-  const nextDays: Array<INextDayProps> = []
+  const daysAdded: string[] = []
+  const nextDays: INextDayProps[] = []
 
   data.list.forEach((forecast: IForecast) => {
     const day = new Date(forecast.dt_txt)

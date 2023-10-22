@@ -17,21 +17,14 @@ https://github.com/rodrigojsdeveloper/iweather.git
 
 ## Package Manager
 
-This project uses Yarn as a package manager. Make sure you have it installed before proceeding. If you don't already have it, you can download it <a href="https://classic.yarnpkg.com/lang/en/docs/install">here</a>.
-
-### Warning:
-
-Although Yarn is the recommended package manager, you can also use NPM by running the following commands:
-
-- To install dependencies: npm install
-- To start iWeather: npm run dev
+This project uses Yarn as its package manager. Make sure you have it installed before continuing.
 
 ## Installation of Dependencies
 
 To install project dependencies, open the terminal at the root and run the following command:
 
 ```
-yarn
+npm install
 ```
 
 ## Starting iWeather
@@ -39,7 +32,7 @@ yarn
 To start the project, run the following command in the terminal:
 
 ```
-yarn dev
+npm run dev
 ```
 
 ## Starting the Project in Docker

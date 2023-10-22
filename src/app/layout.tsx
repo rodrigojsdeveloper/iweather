@@ -1,7 +1,7 @@
 import { Nunito } from 'next/font/google'
 import { PropsWithChildren } from 'react'
-import { Providers } from '@/context'
 import type { Metadata } from 'next'
+import Providers from '@/context'
 import 'dotenv/config.js'
 import './globals.css'
 

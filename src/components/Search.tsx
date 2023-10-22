@@ -19,6 +19,7 @@ const Search = () => {
           <div className="mb-4 flex w-full flex-row items-center justify-between gap-x-3 max-lg:mb-3 max-lg:gap-x-2">
             <Link
               href="/"
+              aria-label="weather"
               className="flex h-56 w-full max-w-56 items-center justify-center rounded-def bg-gray-600 p-1 hover:bg-gray-700"
             >
               <svg

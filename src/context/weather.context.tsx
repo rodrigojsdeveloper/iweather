@@ -27,7 +27,7 @@ const WeatherContextProvider = ({ children }: PropsWithChildren) => {
     isBrowser && cityFromLocalStorage ? JSON.parse(cityFromLocalStorage) : null,
   )
 
-  const [nextDays, setNextDays] = useState<Array<INextDayProps>>([])
+  const [nextDays, setNextDays] = useState<INextDayProps[]>([])
 
   const [isLoading, setIsLoading] = useState<boolean>(true)
 

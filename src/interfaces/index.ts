@@ -114,15 +114,15 @@ export interface IWeatherIcons {
 export interface ICityComponent {
   city: ICityProps
   index: number
-  cities: Array<ICityProps>
+  cities: ICityProps[]
 }
 
 export interface ICityContextData {
   isLoadingInput: boolean
   setSearch: Dispatch<SetStateAction<string>>
-  cities: Array<ICityProps>
+  cities: ICityProps[]
   search: string
-  setCities: Dispatch<SetStateAction<Array<ICityProps>>>
+  setCities: Dispatch<SetStateAction<ICityProps[]>>
 }
 
 export interface IMain {
@@ -153,7 +153,7 @@ export interface IForecast {
   pop: number
   sys: { pod: string }
   visibility: number
-  weather: Array<IWeatherProps>
+  weather: IWeatherProps[]
   wind: { speed: number; deg: number; gust: number }
 }
 
@@ -185,7 +185,7 @@ export interface INextDay {
 
 export interface IWeatherContextData {
   isLoading: boolean
-  nextDays: Array<INextDayProps>
+  nextDays: INextDayProps[]
   today: ITodayDetailsProps
   city: ICityProps
   handleSelected: (city: ICityProps) => void
