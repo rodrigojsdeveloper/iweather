@@ -1,13 +1,13 @@
-import { Nunito } from 'next/font/google'
 import { PropsWithChildren } from 'react'
+import { Nunito } from 'next/font/google'
 import type { Metadata } from 'next'
 import Providers from '@/context'
 import 'dotenv/config.js'
 import './globals.css'
 
 const nunito = Nunito({
-  weight: ['300', '400', '500', '600', '700'],
   subsets: ['latin'],
+  variable: '--font-nunito',
 })
 
 export const metadata: Metadata = {
@@ -18,17 +18,8 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: PropsWithChildren) {
   return (
-    <html lang="en">
-      <head>
-        <link rel="shortcut icon" href="/favicon.svg" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600;700;800;900;1000&display=swap"
-          rel="stylesheet"
-        />
-      </head>
-      <body className={nunito.className}>
+    <html lang="en" className={`${nunito.variable} font-nunito`}>
+      <body>
         <Providers>{children}</Providers>
       </body>
     </html>

@@ -40,7 +40,7 @@ npm run dev
 You can access the iWeather application at the following link:
 
 ```
-https://iweather-plus.vercel.app/
+https://iweather-plus.vercel.app
 ```
 
 <br/>

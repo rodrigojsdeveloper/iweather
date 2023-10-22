@@ -8,6 +8,9 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        nunito: ['var(--font-nunito)'],
+      },
       colors: {
         gray: {
           100: '#FAFAFA',
