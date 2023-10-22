@@ -19,6 +19,9 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: PropsWithChildren) {
   return (
     <html lang="en" className={`${nunito.variable} font-nunito`}>
+      <head>
+        <link rel="icon" href="/favicon.svg" type="image/x-icon" />
+      </head>
       <body>
         <Providers>{children}</Providers>
       </body>
